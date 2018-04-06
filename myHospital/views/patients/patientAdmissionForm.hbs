@@ -1,6 +1,6 @@
 
 <form>
-    <h1 align="center">Doctor's Information Form</h1> <br />
+    <h1 align="center">Patient's Admission Form</h1> <br />
 
     <div class="form-row">
       <div class="col-md-4 mb-3">
@@ -21,10 +21,6 @@
         <div class="col-md-4 mb-3">
             <label for="birthDate">Date of Birth</label>
             <input type="date" id="birthDate" class="form-control is-valid">
-        </div>
-        <div class="col-md-4 mb-3">
-            <label for="appointmentDate">Date of Appointment</label>
-            <input type="date" id="appointmentDate" class="form-control is-valid">
         </div>
     </div>
 
@@ -68,11 +64,61 @@
         </div>
     </div>
 
+    <br />
+    <b>Permanent Address:</b> <br /> <br />
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="validationServer03">City / Village</label>
+          <input type="text" class="form-control is-valid" id="validationServer03" placeholder="City / Village" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationServer04">Street Name</label>
+          <input type="text" class="form-control is-valid" id="validationServer04" placeholder="Street Name" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationServer04">Street Number</label>
+          <input type="text" class="form-control is-valid" id="validationServer04" placeholder="Street Number">
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationServer05">Area</label>
+          <input type="text" class="form-control is-valid" id="validationServer05" placeholder="Area" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationServer05">Thana</label>
+          <input type="text" class="form-control is-valid" id="validationServer05" placeholder="Thana" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationServer05">District</label>
+          <input type="text" class="form-control is-valid" id="validationServer05" placeholder="District" required>
+        </div>
+    </div>
 
     <div class="form-row">
         <div class="col-md-4 mb-3">
-          <label for="validationServer03">Educational Qualification</label>
-          
+          <label for="validationServer03">Profession</label>
+          <select class="custom-select is-valid" required>
+              <option value="">Select your Profession</option>
+              <option value="1">Goverment Job</option>
+              <option value="2">Private Job</option>
+              <option value="3">Business</option>
+              <option value="4">Farmer</option>
+              <option value="5">Retired</option>
+              <option value="6">Others</option>
+          </select>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label for="validationServer04">Amount Deposited</label>
+          <input type="text" class="form-control is-valid" id="validationServer04" placeholder="TK" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label for="validationServer03">Choice</label>
+          <select class="custom-select is-valid" required>
+              <option value="">Select your Choice</option>
+              <option value="1">Ward</option>
+              <option value="2">Cabin</option>
+          </select>
         </div>
     </div>
 

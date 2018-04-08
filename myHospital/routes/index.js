@@ -31,7 +31,6 @@ router.get('/patient-investigation', function(req, res, next) {
   res.render('patients/patientInitialInvestigationForm');
 });
 
-
 /* GET Nurse Entry Form. */
 router.get('/add-nurse', function(req, res, next) {
   res.render('nurses/nurseInformationForm');

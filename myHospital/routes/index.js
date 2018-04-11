@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var db = require('./db.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -9,6 +10,14 @@ router.get('/', function(req, res, next) {
 /* GET add-patient Form. */
 router.get('/add-patient', function(req, res, next) {
   res.render('patients/patientAdmissionForm');
+});
+
+router.post('/add-patient', function(req, res, next) {
+    var a = req.body.pname;
+    console.log(a + 'okok');
+
+
+
 });
 
 /* GET add-doctor Form. */

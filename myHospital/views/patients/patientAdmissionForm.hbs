@@ -1,11 +1,11 @@
 
-<form>
+<form action="/add-patient" method="post">
     <h1 align="center">Patient's Admission Form</h1> <br />
 
     <div class="form-row">
       <div class="col-md-4 mb-3">
         <label for="validationServer01">First name</label>
-        <input type="text" class="form-control is-valid" id="validationServer01" placeholder="First name" value="" required>
+        <input type="text" class="form-control is-valid" id="validationServer01" name="pname" placeholder="First name" value="" >
       </div>
       <div class="col-md-4 mb-3">
         <label for="validationServer01">Middle name</label>
@@ -30,12 +30,12 @@
 
     <div class="form-row">
         <div class="col-md-4 mb-3">
-          <label for="validationServer11">Mobile No</label>
-          <input type="text" class="form-control is-valid" id="validationServer11" placeholder="+8801XXXXXXXXX">
+          <label for="validationServer11">Mobile No (1)</label>
+          <input type="text" class="form-control is-valid" id="validationServer11" placeholder="+8801XXXXXXXXX" >
         </div>
         <div class="col-md-4 mb-3">
-          <label for="validationServer01">Phone No</label>
-          <input type="text" class="form-control is-valid" id="validationServer12" placeholder="+XXXXXXXXX">
+          <label for="validationServer01">Mobile No (2)</label>
+          <input type="text" class="form-control is-valid" id="validationServer12" placeholder="+8801XXXXXXXXX">
         </div>
     </div>
 
@@ -43,28 +43,24 @@
     <b>Present Address:</b> <br /> <br />
     <div class="form-row">
         <div class="col-md-4 mb-3">
-          <label for="validationServer03">City / Village</label>
-          <input type="text" class="form-control is-valid" id="validationServer03" placeholder="City / Village" required>
-        </div>
-        <div class="col-md-4 mb-3">
           <label for="validationServer04">Street Name</label>
-          <input type="text" class="form-control is-valid" id="validationServer04" placeholder="Street Name" required>
+          <input type="text" class="form-control is-valid" id="validationServer04" placeholder="Street Name" >
         </div>
         <div class="col-md-4 mb-3">
-          <label for="validationServer04">Street Number</label>
+          <label for="validationServer04">Street No</label>
           <input type="text" class="form-control is-valid" id="validationServer04" placeholder="Street Number">
         </div>
         <div class="col-md-4 mb-3">
           <label for="validationServer05">Area</label>
-          <input type="text" class="form-control is-valid" id="validationServer05" placeholder="Area" required>
+          <input type="text" class="form-control is-valid" id="validationServer05" placeholder="Area" >
         </div>
         <div class="col-md-4 mb-3">
           <label for="validationServer05">Thana</label>
-          <input type="text" class="form-control is-valid" id="validationServer05" placeholder="Thana" required>
+          <input type="text" class="form-control is-valid" id="validationServer05" placeholder="Thana" >
         </div>
         <div class="col-md-4 mb-3">
           <label for="validationServer05">District</label>
-          <input type="text" class="form-control is-valid" id="validationServer05" placeholder="District" required>
+          <input type="text" class="form-control is-valid" id="validationServer05" placeholder="District" >
         </div>
     </div>
 
@@ -72,28 +68,24 @@
     <b>Permanent Address:</b> <br /> <br />
     <div class="form-row">
         <div class="col-md-4 mb-3">
-          <label for="validationServer03">City / Village</label>
-          <input type="text" class="form-control is-valid" id="validationServer03" placeholder="City / Village" required>
-        </div>
-        <div class="col-md-4 mb-3">
           <label for="validationServer04">Street Name</label>
-          <input type="text" class="form-control is-valid" id="validationServer04" placeholder="Street Name" required>
+          <input type="text" class="form-control is-valid" id="validationServer04" placeholder="Street Name" >
         </div>
         <div class="col-md-4 mb-3">
-          <label for="validationServer04">Street Number</label>
+          <label for="validationServer04">Street No</label>
           <input type="text" class="form-control is-valid" id="validationServer04" placeholder="Street Number">
         </div>
         <div class="col-md-4 mb-3">
           <label for="validationServer05">Area</label>
-          <input type="text" class="form-control is-valid" id="validationServer05" placeholder="Area" required>
+          <input type="text" class="form-control is-valid" id="validationServer05" placeholder="Area" >
         </div>
         <div class="col-md-4 mb-3">
           <label for="validationServer05">Thana</label>
-          <input type="text" class="form-control is-valid" id="validationServer05" placeholder="Thana" required>
+          <input type="text" class="form-control is-valid" id="validationServer05" placeholder="Thana" >
         </div>
         <div class="col-md-4 mb-3">
           <label for="validationServer05">District</label>
-          <input type="text" class="form-control is-valid" id="validationServer05" placeholder="District" required>
+          <input type="text" class="form-control is-valid" id="validationServer05" placeholder="District" >
         </div>
     </div>
 
@@ -102,7 +94,7 @@
     <div class="form-row">
         <div class="col-md-4 mb-3">
           <label for="validationServer03">Profession</label>
-          <select class="custom-select is-valid" required>
+          <select class="custom-select is-valid" >
               <option value="">Select your Profession</option>
               <option value="1">Goverment Job</option>
               <option value="2">Private Job</option>
@@ -115,12 +107,12 @@
 
         <div class="col-md-4 mb-3">
           <label for="validationServer04">Amount Deposited</label>
-          <input type="text" class="form-control is-valid" id="validationServer04" placeholder="TK" required>
+          <input type="text" class="form-control is-valid" id="validationServer04" placeholder="TK" >
         </div>
 
         <div class="col-md-4 mb-3">
           <label for="validationServer03">Choice</label>
-          <select class="custom-select is-valid" required>
+          <select class="custom-select is-valid" >
               <option value="">Select your Choice</option>
               <option value="1">Ward</option>
               <option value="2">Cabin</option>
@@ -133,11 +125,11 @@
     <div class="form-row">
         <div class="col-md-4 mb-3">
           <label for="validationServer04">Name</label>
-          <input type="text" class="form-control is-valid" id="validationServer04" placeholder="Name" required>
+          <input type="text" class="form-control is-valid" id="validationServer04" placeholder="Name" >
         </div>
         <div class="col-md-4 mb-3">
           <label for="validationServer04">Relation with the Patient</label>
-          <input type="text" class="form-control is-valid" id="validationServer04" placeholder="Relation with the patient" required>
+          <input type="text" class="form-control is-valid" id="validationServer04" placeholder="Relation with the patient" >
         </div>
     </div>
 

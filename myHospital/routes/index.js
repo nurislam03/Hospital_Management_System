@@ -1,58 +1,39 @@
+/*
 var express = require('express');
 var router = express.Router();
 var db = require('./db.js');
+*/
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'TBA-Hospital' });
-});
+var dataController = require('./users.js');
 
-/* GET add-patient Form. */
-router.get('/add-patient', function(req, res, next) {
-  res.render('patients/patientAdmissionForm');
-});
+module.exports = function(newApp) {
+    /* GET home page. */
+    newApp.get('/', dataController.showHome);
 
-router.post('/add-patient', function(req, res, next) {
-    var a = req.body.pname;
-    console.log(a + ' okok');
+    /* GET add-patient Form. */
+    newApp.get('/add-patient', dataController.showPatientAdmissionForm);
 
+    // Add-Patient (Submit From)
+    newApp.post('/add-patient', dataController.postPatientAdmissionForm);
 
+    /* GET add-doctor Form. */
+    newApp.get('/add-doctor', dataController.showDoctorAdmissionForm);
 
-});
+    /* GET doctor-profile page. */
+    newApp.get('/doctor-profile', dataController.showDoctorProfile);
 
-/* GET add-doctor Form. */
-router.get('/add-doctor', function(req, res, next) {
-  res.render('doctors/doctorInformation');
-});
+    /* GET patient-profile page. */
+    newApp.get('/patient-profile', dataController.showPatientProfile);
 
-/* GET doctor-profile page. */
-router.get('/doctor-profile', function(req, res, next) {
-  res.render('doctors/doctorProfile');
-});
+    /* GET patient-Initial Investigation Form. */
+    newApp.get('/patient-investigation', dataController.showPatientInvestigationForm);
 
-/* GET patient-profile page. */
-router.get('/patient-profile', function(req, res, next) {
-  res.render('patients/patientProfile');
-});
+    /* GET Nurse Entry Form. */
+    newApp.get('/add-nurse', dataController.showNurseAdmissionForm);
 
-/* GET patient-Initial Investigation Form. */
-router.get('/patient-investigation', function(req, res, next) {
-  res.render('patients/patientInitialInvestigationForm');
-});
+    /* GET Ward Information Form. */
+    newApp.get('/add-ward', dataController.showWordForm);
 
-/* GET Nurse Entry Form. */
-router.get('/add-nurse', function(req, res, next) {
-  res.render('nurses/nurseInformationForm');
-});
-
-/* GET Ward Information Form. */
-router.get('/add-ward', function(req, res, next) {
-  res.render('wards/wardInformationform');
-});
-
-/* GET Medicine Entry Form. */
-router.get('/add-medicine', function(req, res, next) {
-  res.render('medicine/medicineEntryForm');
-});
-
-module.exports = router;
+    /* GET Medicine Entry Form. */
+    newApp.get('/add-medicine', dataController.showMedicineEntryForm);
+}

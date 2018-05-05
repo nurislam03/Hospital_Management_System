@@ -6,10 +6,16 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var expressHbs = require('express-handlebars'); // Express_Handelbars requirement
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+
+/* Don't know the use of these two lines (below) */
+//var index = require('./routes/index');
+//var users = require('./routes/users');
+
 
 var app = express();
+
+require('./routes/index')(app); // getting access of index.js
+
 
 // view engine setup
 app.engine('.hbs', expressHbs({defaultLayout: 'layout', extname: '.hbs'}));
@@ -23,8 +29,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
+/* Don't know the use of these two lines (below) */
+//app.use('/', index);
+//app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -14,7 +14,7 @@ router.get('/add-patient', function(req, res, next) {
 
 router.post('/add-patient', function(req, res, next) {
     var a = req.body.pname;
-    console.log(a + 'okok');
+    console.log(a + ' okok');
 
 
 

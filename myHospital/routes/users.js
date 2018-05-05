@@ -16,8 +16,8 @@ router.showPatientAdmissionForm = function(req, res, next) {
 
 // Add-Patient (Submit From)
 router.postPatientAdmissionForm = function(req, res, next) {
-    var a = req.body.pname;
-    console.log(a + ' okok');
+    var firstName = req.body.pFname;
+    console.log(firstName + ' okok');
 }
 
 

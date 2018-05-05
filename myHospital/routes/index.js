@@ -13,7 +13,7 @@ module.exports = function(newApp) {
     /* GET add-patient Form. */
     newApp.get('/add-patient', dataController.showPatientAdmissionForm);
 
-    // Add-Patient (Submit From)
+    // POST Add-Patient (Submit From)
     newApp.post('/add-patient', dataController.postPatientAdmissionForm);
 
     /* GET add-doctor Form. */

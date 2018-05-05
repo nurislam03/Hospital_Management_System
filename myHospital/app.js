@@ -14,8 +14,6 @@ var expressHbs = require('express-handlebars'); // Express_Handelbars requiremen
 
 var app = express();
 
-require('./routes/index')(app); // getting access of index.js
-
 
 // view engine setup
 app.engine('.hbs', expressHbs({defaultLayout: 'layout', extname: '.hbs'}));
@@ -32,6 +30,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 /* Don't know the use of these two lines (below) */
 //app.use('/', index);
 //app.use('/users', users);
+
+require('./routes/index')(app); // getting access of index.js
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

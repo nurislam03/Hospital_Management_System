@@ -16,8 +16,36 @@ router.showPatientAdmissionForm = function(req, res, next) {
 
 // Add-Patient (Submit From)
 router.postPatientAdmissionForm = function(req, res, next) {
-    var firstName = req.body.pFname;
-    console.log(firstName + ' okok');
+    var aDate = req.body.pAdmissionDate;
+    var fName = req.body.pFname;
+    var mName = req.body.pMname;
+    var lName = req.body.pLname;
+    var bDate = req.body.pbirthDate;
+    var mobile1 = req.body.pMobile1;
+    var mobile2 = req.body.pMobile2;
+    var pPresentStreeNo = req.body.pPerStreeNo;
+    var pPresentStreetName = req.body.pStreetName;
+    var pPresentArea = req.body.pPresentArea;
+    var pPresentThana = req.body.pPresentThana;
+    var pPresentDistrict = req.body.pPresentDistrict;
+    var pPerStreeNo = req.body.pPerStreeNo;
+    var pPerStreetName = req.body.pPerStreetName;
+    var pPerArea = req.body.pPerArea;
+    var pPerThana = req.body.pPerThana;
+    var pPerDistrict = req.body.pPerDistrict;
+    var pProfession = req.body.pProfession;
+    var pDepositedAmount = req.body.pDepositedAmount;
+    var pChoice = req.body.pChoice;
+    var pAdvisiorName = req.body.pAdvisiorName;
+    var pAdvisiorRelation = req.body.pAdvisiorRelation;
+
+    console.log(JSON.stringify(req.body));
+
+    db.query("INSERT INTO `Patient`(`admission_date`, `first_name`, `middle_name`, `last_name`, `birth_date`, `mobile1`, `mobile2`, `present_streetnum`, `present_streetname`, `present_area`, `present_thana`, `present_district`, `permanent_streetnum`, `permanent_streetname`, `permanent_area`, `permanent_thana`, `permanent_district`, `profession`, `amount_deposited`, `choice`) VALUES(? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?)",[aDate, fName, mName, lName, bDate, mobile1, mobile2, pPresentStreeNo, pPresentStreetName, pPresentArea, pPresentThana, pPresentDistrict, pPerStreeNo, pPerStreetName, pPerArea, pPerThana, pPerDistrict, pProfession, pDepositedAmount, pChoice], function(err, res, next) {
+        if(err) console.log('there is an error in insertion');
+        //req.flash('message', 'New Patient is added successfully!');
+        //res.redirect('/add-patient');
+    });
 }
 
 

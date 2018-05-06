@@ -7,7 +7,7 @@ function connectDB() {
         db = mysql.createConnection(dbConfig.connection);
         db.connect(function (err) {
             if(err){
-                console.log(err.reason);
+                console.log(err.reason + ' problem with the db connection');
             }
         });
 

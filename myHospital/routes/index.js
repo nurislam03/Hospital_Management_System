@@ -19,6 +19,9 @@ module.exports = function(newApp) {
     /* GET add-doctor Form. */
     newApp.get('/add-doctor', dataController.showDoctorAdmissionForm);
 
+    //POST add-patient
+    newApp.get('/add-doctor', dataController.postDoctorAdmissionForm);
+
     /* GET doctor-profile page. */
     newApp.get('/doctor-profile', dataController.showDoctorProfile);
 

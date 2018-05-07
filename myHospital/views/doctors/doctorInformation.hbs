@@ -1,19 +1,19 @@
 
-<form>
+<form action="/add-doctor" method="post">
     <h1 align="center">Doctor's Information Form</h1> <br />
 
     <div class="form-row">
       <div class="col-md-4 mb-3">
         <label for="validationServer01">First name</label>
-        <input type="text" class="form-control is-valid" id="validationServer01" placeholder="First name" name="dFirstName" value="" required>
+        <input type="text" class="form-control is-valid" id="validationServer01" placeholder="First name" name="dFname" value="" required>
       </div>
       <div class="col-md-4 mb-3">
         <label for="validationServer01">Middle name</label>
-        <input type="text" class="form-control is-valid" id="validationServer01" placeholder="Middle name" name="dMiddleName">
+        <input type="text" class="form-control is-valid" id="validationServer01" placeholder="Middle name" name="dMname">
       </div>
       <div class="col-md-4 mb-3">
         <label for="validationServer02">Last name</label>
-        <input type="text" class="form-control is-valid" id="validationServer02" placeholder="Last name" name="dLastName">
+        <input type="text" class="form-control is-valid" id="validationServer02" placeholder="Last name" name="dLname">
       </div>
     </div>
 
@@ -28,41 +28,7 @@
         </div>
     </div>
 
-    <div class="form-row">
-        <div class="col-md-4 mb-3">
-          <label for="validationServer11">Mobile No (1)</label>
-          <input type="text" class="form-control is-valid" id="validationServer11" placeholder="+8801XXXXXXXXX" name="dMobile1">
-        </div>
-        <div class="col-md-4 mb-3">
-          <label for="validationServer01">Mobile No (2)</label>
-          <input type="text" class="form-control is-valid" id="validationServer12" placeholder="+8801XXXXXXXXX" name="dMobile2">
-        </div>
-    </div>
 
-    <br />
-    <b>Present Address</b> <br /> <br />
-    <div class="form-row">
-        <div class="col-md-4 mb-3">
-          <label for="validationServer04">Street Name</label>
-          <input type="text" class="form-control is-valid" id="validationServer04" placeholder="Street Name" name="dStreetName">
-        </div>
-        <div class="col-md-4 mb-3">
-          <label for="validationServer04">Street Number</label>
-          <input type="text" class="form-control is-valid" id="validationServer04" placeholder="Street Number" name="dStreetNum">
-        </div>
-        <div class="col-md-4 mb-3">
-          <label for="validationServer05">Area</label>
-          <input type="text" class="form-control is-valid" id="validationServer05" placeholder="Area" name="dArea">
-        </div>
-        <div class="col-md-4 mb-3">
-          <label for="validationServer05">Thana</label>
-          <input type="text" class="form-control is-valid" id="validationServer05" placeholder="Thana" name="dThana">
-        </div>
-        <div class="col-md-4 mb-3">
-          <label for="validationServer05">District</label>
-          <input type="text" class="form-control is-valid" id="validationServer05" placeholder="District" name="dDist">
-        </div>
-    </div>
 
     <br />
     <b>Educational Qualification</b>
@@ -71,45 +37,45 @@
     <div class="form-row">
         <div class="col-md-2 mb-3">
           <label for="Qualification01">SSC / O Levels</label>
-          <input type="text" class="form-control is-valid", id="Qualification01" placeholder="SSC or O levels"/>
+          <input type="text" class="form-control is-valid", id="Qualification01" name="dSSCorO" placeholder="SSC or O levels"/>
         </div>
         <div class="col-md-4 mb-3">
           <label for="Qualification01">Board/Institute</label>
-          <input type="text" class="form-control is-valid", id="Qualification01" placeholder="Board/Institute"/>
+          <input type="text" class="form-control is-valid", id="Qualification01" name="dBsscORo" placeholder="Board/Institute"/>
         </div>
         <div class="col-md-2 mb-3">
           <label for="Qualification01">Year</label>
-          <input type="text" class="form-control is-valid", id="Qualification01" placeholder="Year"/>
+          <input type="text" class="form-control is-valid", id="Qualification01" name="dYsscORo"  placeholder="Year"/>
         </div>
         <div class="col-md-2 mb-3">
           <label for="Qualification01">Division/CGPA</label>
-          <input type="text" class="form-control is-valid", id="Qualification01" placeholder="Division/CGPA"/>
+          <input type="text" class="form-control is-valid", id="Qualification01" name="dDsscORo" placeholder="Division/CGPA"/>
         </div>
         <div class="col-md-2 mb-3">
           <label for="Qualification01">Position</label>
-          <input type="text" class="form-control is-valid", id="Qualification01" placeholder="Position"/>
+          <input type="text" class="form-control is-valid", id="Qualification01" name="dPsscORo" placeholder="Position"/>
         </div>
 
 
         <div class="col-md-2 mb-3">
           <label for="Qualification02">HSC / A Levels</label>
-          <input type="text" class="form-control is-valid", id="Qualification02" placeholder="HSC or A levels"/>
+          <input type="text" class="form-control is-valid", id="Qualification02" name="dHSCorA" placeholder="HSC or A levels"/>
         </div>
         <div class="col-md-4 mb-3">
           <label for="Qualification01">Board/Institute</label>
-          <input type="text" class="form-control is-valid", id="Qualification01" placeholder="Board/Institute"/>
+          <input type="text" class="form-control is-valid", id="Qualification01" name="dBhscORa" placeholder="Board/Institute"/>
         </div>
         <div class="col-md-2 mb-3">
           <label for="Qualification01">Year</label>
-          <input type="text" class="form-control is-valid", id="Qualification01" placeholder="Year"/>
+          <input type="text" class="form-control is-valid", id="Qualification01" name="dYhscORa" placeholder="Year"/>
         </div>
         <div class="col-md-2 mb-3">
           <label for="Qualification01">Division/CGPA</label>
-          <input type="text" class="form-control is-valid", id="Qualification01" placeholder="Division/CGPA"/>
+          <input type="text" class="form-control is-valid", id="Qualification01" name="dDhscORa" placeholder="Division/CGPA"/>
         </div>
         <div class="col-md-2 mb-3">
           <label for="Qualification01">Position</label>
-          <input type="text" class="form-control is-valid", id="Qualification01" placeholder="Position"/>
+          <input type="text" class="form-control is-valid", id="Qualification01" name="dPhscORa" placeholder="Position"/>
         </div>
 
 
@@ -119,63 +85,63 @@
         </div>
         <div class="col-md-4 mb-3">
           <label for="Qualification01">Board/Institute</label>
-          <input type="text" class="form-control is-valid", id="Qualification01" placeholder="Board/Institute"/>
+          <input type="text" class="form-control is-valid", id="Qualification01" name="dBMBBS" placeholder="Board/Institute"/>
         </div>
         <div class="col-md-2 mb-3">
           <label for="Qualification01">Year</label>
-          <input type="text" class="form-control is-valid", id="Qualification01" placeholder="Year"/>
+          <input type="text" class="form-control is-valid", id="Qualification01" name="dYmbbs" placeholder="Year"/>
         </div>
         <div class="col-md-2 mb-3">
           <label for="Qualification01">Division/CGPA</label>
-          <input type="text" class="form-control is-valid", id="Qualification01" placeholder="Division/CGPA"/>
+          <input type="text" class="form-control is-valid", id="Qualification01" name="dDmbbs" placeholder="Division/CGPA"/>
         </div>
         <div class="col-md-2 mb-3">
           <label for="Qualification01">Position</label>
-          <input type="text" class="form-control is-valid", id="Qualification01" placeholder="Position"/>
+          <input type="text" class="form-control is-valid", id="Qualification01" name="dPmbbs" placeholder="Position"/>
         </div>
 
 
         <div class="col-md-2 mb-3">
           <label for="Qualification04">FCPS</label>
-          <input type="text" class="form-control is-valid", id="Qualification04" placeholder="FCPS"/>
+          <input type="text" class="form-control is-valid", id="Qualification04" name="dFCPS" placeholder="FCPS"/>
         </div>
         <div class="col-md-4 mb-3">
           <label for="Qualification01">Board/Institute</label>
-          <input type="text" class="form-control is-valid", id="Qualification01" placeholder="Board/Institute"/>
+          <input type="text" class="form-control is-valid", id="Qualification01" name="dBfcps" placeholder="Board/Institute"/>
         </div>
         <div class="col-md-2 mb-3">
           <label for="Qualification01">Year</label>
-          <input type="text" class="form-control is-valid", id="Qualification01" placeholder="Year"/>
+          <input type="text" class="form-control is-valid", id="Qualification01" name="dYfcps" placeholder="Year"/>
         </div>
         <div class="col-md-2 mb-3">
           <label for="Qualification01">Division/CGPA</label>
-          <input type="text" class="form-control is-valid", id="Qualification01" placeholder="Division/CGPA"/>
+          <input type="text" class="form-control is-valid", id="Qualification01" name="dDfcps" placeholder="Division/CGPA"/>
         </div>
         <div class="col-md-2 mb-3">
           <label for="Qualification01">Position</label>
-          <input type="text" class="form-control is-valid", id="Qualification01" placeholder="Position"/>
+          <input type="text" class="form-control is-valid", id="Qualification01" name="dPfcps" placeholder="Position"/>
         </div>
 
 
         <div class="col-md-2 mb-3">
           <label for="Qualification05">Others</label>
-          <input type="text" class="form-control is-valid", id="Qualification05" placeholder="Others"/>
+          <input type="text" class="form-control is-valid", id="Qualification05" name="dOthers" placeholder="Others"/>
         </div>
         <div class="col-md-4 mb-3">
           <label for="Qualification01">Board/Institute</label>
-          <input type="text" class="form-control is-valid", id="Qualification01" placeholder="Board/Institute"/>
+          <input type="text" class="form-control is-valid", id="Qualification01" name="dBothers" placeholder="Board/Institute"/>
         </div>
         <div class="col-md-2 mb-3">
           <label for="Qualification01">Year</label>
-          <input type="text" class="form-control is-valid", id="Qualification01" placeholder="Year"/>
+          <input type="text" class="form-control is-valid", id="Qualification01" name="dYothers" placeholder="Year"/>
         </div>
         <div class="col-md-2 mb-3">
           <label for="Qualification01">Division/CGPA</label>
-          <input type="text" class="form-control is-valid", id="Qualification01" placeholder="Division/CGPA"/>
+          <input type="text" class="form-control is-valid", id="Qualification01" name="dDothers" placeholder="Division/CGPA"/>
         </div>
         <div class="col-md-2 mb-3">
           <label for="Qualification01">Position</label>
-          <input type="text" class="form-control is-valid", id="Qualification01" placeholder="Position"/>
+          <input type="text" class="form-control is-valid", id="Qualification01" name="dPothers" placeholder="Position"/>
         </div>
     </div>
 
@@ -184,55 +150,55 @@
     <div class="form-row">
         <div class="col-md-3 mb-3">
             <label for="doctorExperience01">Job Title</label>
-            <input type="text" class="form-control is-valid "id="doctorExperience01" placeholder="Job Title 01"/>
+            <input type="text" class="form-control is-valid "id="doctorExperience01" name="dJob1" placeholder="Job Title 01"/>
         </div>
         <div class="col-md-3 mb-3">
             <label for="doctorExperience02">From</label>
-            <input type="text" class="form-control is-valid "id="doctorExperience02" placeholder="From"/>
+            <input type="text" class="form-control is-valid "id="doctorExperience02" name="dFrom1" placeholder="From"/>
         </div>
         <div class="col-md-3 mb-3">
             <label for="doctorExperience03">To</label>
-            <input type="text" class="form-control is-valid "id="doctorExperience03" placeholder="To"/>
+            <input type="text" class="form-control is-valid "id="doctorExperience03" name="dTo1" placeholder="To"/>
         </div>
         <div class="col-md-3 mb-3">
             <label for="doctorExperience04">Organization</label>
-            <input type="text" class="form-control is-valid "id="doctorExperience04" placeholder="Organization"/>
+            <input type="text" class="form-control is-valid "id="doctorExperience04" name="dOrganization1" placeholder="Organization"/>
         </div>
 
 
         <div class="col-md-3 mb-3">
             <label for="doctorExperience01">Job Title</label>
-            <input type="text" class="form-control is-valid "id="doctorExperience01" placeholder="Job Title 02"/>
+            <input type="text" class="form-control is-valid "id="doctorExperience01" name="dJob2" placeholder="Job Title 02"/>
         </div>
         <div class="col-md-3 mb-3">
             <label for="doctorExperience02">From</label>
-            <input type="text" class="form-control is-valid "id="doctorExperience02" placeholder="From"/>
+            <input type="text" class="form-control is-valid "id="doctorExperience02" name="dFrom2" placeholder="From"/>
         </div>
         <div class="col-md-3 mb-3">
             <label for="doctorExperience03">To</label>
-            <input type="text" class="form-control is-valid "id="doctorExperience03" placeholder="To"/>
+            <input type="text" class="form-control is-valid "id="doctorExperience03" name="dTo2" placeholder="To"/>
         </div>
         <div class="col-md-3 mb-3">
             <label for="doctorExperience04">Organization</label>
-            <input type="text" class="form-control is-valid "id="doctorExperience04" placeholder="Organization"/>
+            <input type="text" class="form-control is-valid "id="doctorExperience04" name="dOrganization2" placeholder="Organization"/>
         </div>
 
 
         <div class="col-md-3 mb-3">
             <label for="doctorExperience01">Job Title</label>
-            <input type="text" class="form-control is-valid "id="doctorExperience01" placeholder="Job Title 03"/>
+            <input type="text" class="form-control is-valid "id="doctorExperience01" name="dJob3" placeholder="Job Title 03"/>
         </div>
         <div class="col-md-3 mb-3">
             <label for="doctorExperience02">From</label>
-            <input type="text" class="form-control is-valid "id="doctorExperience02" placeholder="From"/>
+            <input type="text" class="form-control is-valid "id="doctorExperience02" name="dFrom3" placeholder="From"/>
         </div>
         <div class="col-md-3 mb-3">
             <label for="doctorExperience03">To</label>
-            <input type="text" class="form-control is-valid "id="doctorExperience03" placeholder="To"/>
+            <input type="text" class="form-control is-valid "id="doctorExperience03" name="dTo3" placeholder="To"/>
         </div>
         <div class="col-md-3 mb-3">
             <label for="doctorExperience04">Organization</label>
-            <input type="text" class="form-control is-valid "id="doctorExperience04" placeholder="Organization"/>
+            <input type="text" class="form-control is-valid "id="doctorExperience04" name="dOrganization3" placeholder="Organization"/>
         </div>
     </div>
 
@@ -242,25 +208,25 @@
     <div class="form-row">
         <div class="col-md-3 mb-3">
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="dMemBMA" value="option1">
                 <label name="MEM1" class="form-check-label" for="inlineCheckbox1">BMA</label>
             </div>
         </div>
         <div class="col-md-3 mb-3">
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="dMemBMS" value="option2">
                 <label class="form-check-label" for="inlineCheckbox2">Brithish Medical Society</label>
             </div>
         </div>
         <div class="col-md-3 mb-3">
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="dMemAMS" value="option2">
                 <label class="form-check-label" for="inlineCheckbox2">American Medical Society</label>
             </div>
         </div>
         <div class="col-md-3 mb-3">
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="dMemOthers" value="option2">
                 <label class="form-check-label" for="inlineCheckbox2">Others</label>
             </div>
         </div>

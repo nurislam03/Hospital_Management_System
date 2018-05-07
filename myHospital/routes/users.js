@@ -39,7 +39,7 @@ router.postPatientAdmissionForm = function(req, res, next) {
     var pAdvisiorName = req.body.pAdvisiorName;
     var pAdvisiorRelation = req.body.pAdvisiorRelation;
 
-    console.log(JSON.stringify(req.body));
+    //console.log(JSON.stringify(req.body));
 
     db.query("INSERT INTO `Patient`(`admission_date`, `first_name`, `middle_name`, `last_name`, `birth_date`, `mobile1`, `mobile2`, `present_streetnum`, `present_streetname`, `present_area`, `present_thana`, `present_district`, `permanent_streetnum`, `permanent_streetname`, `permanent_area`, `permanent_thana`, `permanent_district`, `profession`, `amount_deposited`, `choice`) VALUES(? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?)",[aDate, fName, mName, lName, bDate, mobile1, mobile2, pPresentStreeNo, pPresentStreetName, pPresentArea, pPresentThana, pPresentDistrict, pPerStreeNo, pPerStreetName, pPerArea, pPerThana, pPerDistrict, pProfession, pDepositedAmount, pChoice], function(err, res, next) {
         if(err) console.log('there is an error in insertion');
@@ -48,6 +48,11 @@ router.postPatientAdmissionForm = function(req, res, next) {
     });
 }
 
+
+//post doctor
+router.postDoctorAdmissionForm = function(req, res, next) {
+    
+}
 
 /* GET add-doctor Form. */
 router.showDoctorAdmissionForm = function(req, res, next) {

@@ -10,32 +10,36 @@ module.exports = function(newApp) {
     /* GET home page. */
     newApp.get('/', dataController.showHome);
 
-    /* GET add-patient Form. */
+    /* patient */
     newApp.get('/add-patient', dataController.showPatientAdmissionForm);
-
-    // POST Add-Patient (Submit From)
     newApp.post('/add-patient', dataController.postPatientAdmissionForm);
 
-    /* GET add-doctor Form. */
-    newApp.get('/add-doctor', dataController.showDoctorAdmissionForm);
 
-    //POST add-patient
-    newApp.get('/add-doctor', dataController.postDoctorAdmissionForm);
-
-    /* GET doctor-profile page. */
-    newApp.get('/doctor-profile', dataController.showDoctorProfile);
-
-    /* GET patient-profile page. */
-    newApp.get('/patient-profile', dataController.showPatientProfile);
-
-    /* GET patient-Initial Investigation Form. */
+    /* patient-Initial Investigation Form. */
     newApp.get('/patient-investigation', dataController.showPatientInvestigationForm);
 
-    /* GET Nurse Entry Form. */
+
+    /* patient-profile page. */
+    newApp.get('/patient-profile', dataController.showPatientProfile);
+
+
+    /* Doctor */
+    newApp.get('/add-doctor', dataController.showDoctorAdmissionForm);
+    newApp.get('/add-doctor', dataController.postDoctorAdmissionForm);
+
+
+    /* doctor-profile page. */
+    newApp.get('/doctor-profile', dataController.showDoctorProfile);
+
+
+
+    /* Nurse */
     newApp.get('/add-nurse', dataController.showNurseAdmissionForm);
 
-    /* GET Ward Information Form. */
+
+    /* Ward */
     newApp.get('/add-ward', dataController.showWordForm);
+
 
     /* GET Medicine Entry Form. */
     newApp.get('/add-medicine', dataController.showMedicineEntryForm);

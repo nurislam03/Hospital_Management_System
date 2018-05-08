@@ -23,8 +23,8 @@ router.postPatientAdmissionForm = function(req, res, next) {
     var bDate = req.body.pbirthDate;
     var mobile1 = req.body.pMobile1;
     var mobile2 = req.body.pMobile2;
-    var pPresentStreeNo = req.body.pPerStreeNo;
-    var pPresentStreetName = req.body.pStreetName;
+    var pPresentStreetNo = req.body.pPresentStreetNo;
+    var pPresentStreetName = req.body.pPresentStreetName;
     var pPresentArea = req.body.pPresentArea;
     var pPresentThana = req.body.pPresentThana;
     var pPresentDistrict = req.body.pPresentDistrict;
@@ -41,38 +41,46 @@ router.postPatientAdmissionForm = function(req, res, next) {
 
     //console.log(JSON.stringify(req.body));
 
-    db.query("INSERT INTO `Patient`(`admission_date`, `first_name`, `middle_name`, `last_name`, `birth_date`, `mobile1`, `mobile2`, `present_streetnum`, `present_streetname`, `present_area`, `present_thana`, `present_district`, `permanent_streetnum`, `permanent_streetname`, `permanent_area`, `permanent_thana`, `permanent_district`, `profession`, `amount_deposited`, `choice`) VALUES(? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?)",[aDate, fName, mName, lName, bDate, mobile1, mobile2, pPresentStreeNo, pPresentStreetName, pPresentArea, pPresentThana, pPresentDistrict, pPerStreeNo, pPerStreetName, pPerArea, pPerThana, pPerDistrict, pProfession, pDepositedAmount, pChoice], function(err, res, next) {
+    db.query("INSERT INTO `Patient`(`admission_date`, `first_name`, `middle_name`, `last_name`, `birth_date`, `mobile1`, `mobile2`, `present_streetnum`, `present_streetname`, `present_area`, `present_thana`, `present_district`, `permanent_streetnum`, `permanent_streetname`, `permanent_area`, `permanent_thana`, `permanent_district`, `profession`, `amount_deposited`, `choice`) VALUES(? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?)",[aDate, fName, mName, lName, bDate, mobile1, mobile2, pPresentStreetNo, pPresentStreetName, pPresentArea, pPresentThana, pPresentDistrict, pPerStreeNo, pPerStreetName, pPerArea, pPerThana, pPerDistrict, pProfession, pDepositedAmount, pChoice], function(err) {
         if(err) console.log('there is an error in insertion');
-        //req.flash('message', 'New Patient is added successfully!');
-        //res.redirect('/add-patient');
+        req.flash('message', 'New Patient is added successfully!');
+        res.redirect('/patient-profile');
     });
 }
 
 
-//post doctor
-router.postDoctorAdmissionForm = function(req, res, next) {
-    
-}
-
-/* GET add-doctor Form. */
-router.showDoctorAdmissionForm = function(req, res, next) {
-    res.render('doctors/doctorInformation');
-}
-
-/* GET doctor-profile page. */
-router.showDoctorProfile = function(req, res, next) {
-    res.render('doctors/doctorProfile');
-}
-
 /* GET patient-profile page. */
 router.showPatientProfile = function(req, res, next) {
-    res.render('patients/patientProfile');
-}
+    db.query('SELECT * From Patient ORDER by patient_id DESC LIMIT 1',[], function (err, result, fields) {
+        if (err) throw err;
+        console.log(result[0]);
+        res.render('patients/patientProfile', {pageTitile: 'Patient Profile', profileValue: result[0], message: req.flash('message')});
+    });
+};
+
 
 /* GET patient-Initial Investigation Form. */
 router.showPatientInvestigationForm = function(req, res, next) {
     res.render('patients/patientInitialInvestigationForm');
-}
+};
+
+
+//post doctor
+router.postDoctorAdmissionForm = function(req, res, next) {
+
+};
+
+/* GET add-doctor Form. */
+router.showDoctorAdmissionForm = function(req, res, next) {
+    res.render('doctors/doctorInformation');
+};
+
+/* GET doctor-profile page. */
+router.showDoctorProfile = function(req, res, next) {
+    res.render('doctors/doctorProfile');
+};
+
+
 
 /* GET Nurse Entry Form. */
 router.showNurseAdmissionForm = function(req, res, next) {

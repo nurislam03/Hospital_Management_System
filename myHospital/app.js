@@ -4,6 +4,10 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+
+
+var session  = require('express-session'); //
+var flash      = require('req-flash'); //
 var expressHbs = require('express-handlebars'); // Express_Handelbars requirement
 
 
@@ -26,6 +30,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session({ secret: '123' })); //
+app.use(flash()); //
 
 /* Don't know the use of these two lines (below) */
 //app.use('/', index);

@@ -12,18 +12,104 @@
 <div>
 	<h1 align="center">Patient-profile</h1>
 	<div class="row">
-
-
-		<div class="col-md-4 mb-3">
-			<h5>Name : {{profileValue.first_name}}</h5>
-		</div>
-
-
-	</div>
-
-	<div class="row">
-		<div class="col-md-4 mb-3">
+		<div class="col-md-4 mb-3 alert alert-primary">
 			<h5>Patient Id: {{profileValue.patient_id}}</h5>
 		</div>
 	</div>
+	<br />
+
+	<div class="row">
+		<div class="col-md-4 mb-3">
+			<h5>First Name: {{profileValue.first_name}}</h5>
+		</div>
+		<div class="col-md-4 mb-3">
+			<h5> Middle Name: {{profileValue.middle_name}}</h5>
+		</div>
+		<div class="col-md-4 mb-3">
+			<h5>Last Name: {{profileValue.last_name}}</h5>
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="col-md-4 mb-3">
+			<h5>Mobile1: {{profileValue.mobile1}}</h5>
+		</div>
+		<div class="col-md-4 mb-3">
+			<h5>Mobile2: {{profileValue.mobile2}}</h5>
+		</div>
+	</div>
+
+	<br />
+	<div class="row">
+		<div class="col-md-4 mb-3">
+			<h5>Date of Birth: {{profileValue.birth_date}}</h5>
+		</div>
+		<div class="col-md-4 mb-3">
+			<h5>Admission Date: {{profileValue.admission_date}}</h5>
+		</div>
+	</div>
+
+
+	<br />
+	<h3>Present Address:</h3> <br />
+	<div class="row">
+		<div class="col-md-4 mb-3">
+			<h5>Street Name: {{profileValue.present_streetname}}</h5>
+		</div>
+		<div class="col-md-4 mb-3">
+			<h5>Steet No: {{profileValue.present_streetnum}}</h5>
+		</div>
+		<div class="col-md-4 mb-3">
+			<h5>Area: {{profileValue.present_area}}</h5>
+		</div>
+		<div class="col-md-4 mb-3">
+			<h5>Thana: {{profileValue.present_thana}}</h5>
+		</div>
+		<div class="col-md-4 mb-3">
+			<h5>District: {{profileValue.present_district}}</h5>
+		</div>
+	</div>
+
+	<br /> <br />
+	<h3>Permanent Address:</h3> <br />
+	<div class="row">
+		<div class="col-md-4 mb-3">
+			<h5>Street Name: {{profileValue.permanent_streetname}}</h5>
+		</div>
+		<div class="col-md-4 mb-3">
+			<h5>Street No: {{profileValue.permanent_streetnum}}</h5>
+		</div>
+		<div class="col-md-4 mb-3">
+			<h5>Area: {{profileValue.permanent_area}}</h5>
+		</div>
+		<div class="col-md-4 mb-3">
+			<h5>Thana: {{profileValue.permanent_thana}}</h5>
+		</div>
+		<div class="col-md-4 mb-3">
+			<h5>District: {{profileValue.permanent_district}}</h5>
+		</div>
+	</div>
+
+
+	<br /> <br />
+	<div class="row">
+		<div class="col-md-4 mb-3">
+			<h5>Profession: {{profileValue.profession}}</h5>
+		</div>
+		<div class="col-md-4 mb-3">
+			<h5>Amount Deposited: {{profileValue.amount_deposited}}</h5>
+		</div>
+		<div class="col-md-4 mb-3">
+			<h5>Choice: {{profileValue.choice}}</h5>
+		</div>
+	</div>
 </div>
+<br /> <br />
+
+<form action="/patient-investigation" method="GET">
+	<div align="center">
+		<button class="btn btn-primary" type="submit">Add More Info to Investigation Form</button>
+	</div>
+</form>
+<br />

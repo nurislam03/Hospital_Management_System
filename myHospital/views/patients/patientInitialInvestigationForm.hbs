@@ -1,23 +1,184 @@
 <br />
-<h1 align="center">Patient Initial Investigation Form </h1>
-<p>To do : </p>
-<ul>
-	<li>POST Method</li>
-	<li>GET  Method</li>
-</ul>
+<div class="row justify-content-md-center">
+    <div class="col-md-4">
+        {{#if message}}
+            <div class="alert alert-primary" align="center">
+                {{message}}
+            </div>
+        {{/if}}
+	</div>
+</div>
+
+
+
 <br />
-<b>Patient Personal Information</b> <br /> <br />
+<h1 align="center">Patient Initial Investigation Form</h1>
+<br />
+
+<div>
+	<div class="row">
+		<div class="col-md-4 mb-3 alert alert-primary">
+			<h5>Patient Id: {{profileValue.patient_id}}</h5>
+		</div>
+	</div>
+	<br />
+
+
+	<div class="row">
+		<div class="col-md-4 mb-3">
+			<h5>First Name: {{profileValue.first_name}}</h5>
+		</div>
+		<div class="col-md-4 mb-3">
+			<h5> Middle Name: {{profileValue.middle_name}}</h5>
+		</div>
+		<div class="col-md-4 mb-3">
+			<h5>Last Name: {{profileValue.last_name}}</h5>
+		</div>
+	</div>
+
+
+	<br />
+	<div class="row">
+		<div class="col-md-4 mb-3">
+			<h5>Date of Birth: {{profileValue.birth_date}}</h5>
+		</div>
+		<div class="col-md-4 mb-3">
+			<h5>Admission Date: {{profileValue.admission_date}}</h5>
+		</div>
+	</div>
+</div>
+
+
+
+<br />
+<h5>Patient Personal Information</h5> <br />
 <form>
 	<div class="form-row">
+		<div class="col-md-4 mb-3">
+			<label for="patient_id">Patient ID</label>
+			<input type="text" id="patient_id" class="form-control is-valid" name="patient_id" required>
+		</div>
         <div class="col-md-4 mb-3">
             <label for="Height">Height</label>
-            <input type="text" id="Height" class="form-control is-valid">
+            <input type="text" id="Height" class="form-control is-valid" name="pHeight">
         </div>
         <div class="col-md-4 mb-3">
             <label for="weight">Weight</label>
-            <input type="text" id="Weight" class="form-control is-valid">
+            <input type="text" id="Weight" class="form-control is-valid" pWeight>
         </div>
     </div>
 
-	<button class="btn btn-primary" type="submit">Submit form</button>
+	<div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label for="Symptom1">Symptom(1)</label>
+            <input type="text" id="Symptom1" class="form-control is-valid" name="Symptom1">
+        </div>
+		<div class="col-md-4 mb-3">
+            <label for="Symptom2">Symptom(2)</label>
+            <input type="text" id="Symptom2" class="form-control is-valid" name="Symptom2">
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="Symptom3">Symptom(3)</label>
+            <input type="text" id="Symptom2" class="form-control is-valid" name="Symptom3">
+        </div>
+    </div>
+
+	<div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label for="Low Blood Pressure">Low Blood Pressure</label>
+            <input type="text" id="Low Blood Pressure" class="form-control is-valid" name="low_bp">
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="High Blood Pressure">High Blood Pressure</label>
+            <input type="text" id="High Blood Pressure" class="form-control is-valid" name="high_bp">
+        </div>
+    </div>
+
+ 	<br />
+	<h5>General Food Habit:</h5> <br />
+	<div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label for="breakfast1">Breakfast(1)</label>
+            <input type="text" id="breakfast1" class="form-control is-valid" name="breakfast1">
+        </div>
+		<div class="col-md-4 mb-3">
+            <label for="breakfast2">Breakfast(2)</label>
+            <input type="text" id="breakfast2" class="form-control is-valid" name="breakfast2">
+        </div>
+		<div class="col-md-4 mb-3">
+            <label for="breakfast3">Breakfast(3)</label>
+            <input type="text" id="breakfast3" class="form-control is-valid" name="breakfast3">
+        </div>
+    </div>
+
+	<div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label for="lunch1">Lunch(1)</label>
+            <input type="text" id="lunch1" class="form-control is-valid" name="lunch1">
+        </div>
+		<div class="col-md-4 mb-3">
+            <label for="lunch2">Lunch(2)</label>
+            <input type="text" id="lunch2" class="form-control is-valid" name="lunch2">
+        </div>
+		<div class="col-md-4 mb-3">
+            <label for="lunch3">Lunch(3)</label>
+            <input type="text" id="lunch3" class="form-control is-valid" name="lunch3">
+        </div>
+    </div>
+
+	<div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label for="dinner1">Dinner(1)</label>
+            <input type="text" id="dinner1" class="form-control is-valid" name="dinner1">
+        </div>
+		<div class="col-md-4 mb-3">
+            <label for="dinner2">Dinner(2)</label>
+            <input type="text" id="dinner2" class="form-control is-valid" name="dinner2">
+        </div>
+		<div class="col-md-4 mb-3">
+            <label for="dinner3">Dinner(3)</label>
+            <input type="text" id="dinner3" class="form-control is-valid" name="dinner3">
+        </div>
+    </div>
+
+	<h5>Hobby:</h5> <br />
+	<div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="validationServer03">Game</label>
+          <select class="custom-select is-valid" name=" hobby_game" >
+              <option value="">Select any Game</option>
+              <option value="Football">Football</option>
+              <option value="Hokey">Hokey</option>
+              <option value="Volley Ball">Volley Ball</option>
+              <option value="Cricket">Cricket</option>
+              <option value="Chess">Chess</option>
+              <option value="None">None</option>
+          </select>
+        </div>
+
+		<div class="col-md-4 mb-3">
+          <label for="validationServer03">Others</label>
+          <select class="custom-select is-valid" name=" hobby_others" >
+              <option value="">Select any Option</option>
+              <option value="Tourism">Tourism</option>
+              <option value="Writing">Writing</option>
+          </select>
+        </div>
+	</div>
+
+	<div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label for="disease">Disease Name</label>
+            <input type="text" id="disease" class="form-control is-valid" name="disease">
+        </div>
+
+		<div class="col-md-4 mb-3">
+            <label for="doctor_id">Doctor Id</label>
+            <input type="text" id="doctor_id" class="form-control is-valid" name="doctor_id" required>
+        </div>
+    </div>
+
+	<div align="right">
+		<button class="btn btn-primary" type="submit">Submit form</button>
+	</div>
 </form>

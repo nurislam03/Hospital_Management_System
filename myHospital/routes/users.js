@@ -53,7 +53,7 @@ router.postPatientAdmissionForm = function(req, res, next) {
 router.showPatientProfile = function(req, res, next) {
     db.query('SELECT * From Patient ORDER by patient_id DESC LIMIT 1',[], function (err, result, fields) {
         if (err) throw err;
-        console.log(result[0]);
+        //console.log(result[0]);
         res.render('patients/patientProfile', {pageTitile: 'Patient Profile', profileValue: result[0], message: req.flash('message')});
     });
 };
@@ -61,7 +61,12 @@ router.showPatientProfile = function(req, res, next) {
 
 /* GET patient-Initial Investigation Form. */
 router.showPatientInvestigationForm = function(req, res, next) {
-    res.render('patients/patientInitialInvestigationForm');
+    db.query('SELECT * From Patient ORDER by patient_id DESC LIMIT 1',[], function (err, result, fields) {
+        if (err) throw err;
+        //console.log(result[0]);
+        res.render('patients/patientInitialInvestigationForm', {pageTitile: 'Patient Investigation Form', profileValue: result[0], message: req.flash('Patient Initial Investigation Form')});
+    });
+
 };
 
 

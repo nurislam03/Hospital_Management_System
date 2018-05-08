@@ -1,0 +1,200 @@
+<br />
+<div class="row justify-content-md-center">
+    <div class="col-md-4">
+        {{#if message}}
+            <div class="alert alert-primary" align="center">
+                {{message}}
+            </div>
+        {{/if}}
+	</div>
+</div>
+
+
+<br />
+<h1 align="center">Medical Advise by the Specialist</h1>
+<br />
+
+<div>
+	<div class="row">
+		<div class="col-md-4 mb-3 alert alert-primary">
+			<h5>Patient Id: {{profileValue.patient_id}}</h5>
+		</div>
+	</div>
+	<br />
+
+
+	<div class="row">
+		<div class="col-md-4 mb-3">
+			<h5>First Name: {{profileValue.first_name}}</h5>
+		</div>
+		<div class="col-md-4 mb-3">
+			<h5> Middle Name: {{profileValue.middle_name}}</h5>
+		</div>
+		<div class="col-md-4 mb-3">
+			<h5>Last Name: {{profileValue.last_name}}</h5>
+		</div>
+	</div>
+
+
+	<br />
+	<div class="row">
+		<div class="col-md-4 mb-3">
+			<h5>Date of Birth: {{profileValue.birth_date}}</h5>
+		</div>
+		<div class="col-md-4 mb-3">
+			<h5>Admission Date: {{profileValue.admission_date}}</h5>
+		</div>
+	</div>
+</div>
+<br />
+
+
+
+
+
+<br />
+<h5>Medicine Advise</h5> <br />
+<form action="/medical-advise" method="post">
+	<div class="form-row">
+		<div class="col-md-4 mb-3">
+            <label for="MedicineAdviseDAte">Date of Advise</label>
+            <input type="date" id="dateOfAdvise" class="form-control is-valid" name="medicineAdviseDate">
+        </div>
+	</div>
+	<br />
+
+<h5>Medicine List:</h5> <br />
+
+	<div class="form-row">
+		<div class="col-md-2 mb-3">
+			<label for="patient_id">Medicine Name(1)</label>
+			<input type="text" id="patient_id" class="form-control is-valid" name="patient_id" required>
+		</div>
+        <div class="col-md-2 mb-3">
+            <label for="Height">Quantity</label>
+            <input type="text" id="Height" class="form-control is-valid" name="pHeight">
+        </div>
+        <div class="col-md-2 mb-3">
+            <label for="weight">Times/Day</label>
+            <input type="text" id="Weight" class="form-control is-valid" pWeight>
+        </div>
+		<div class="col-md-2 mb-3">
+          <label for="validationServer03">Morning</label>
+          <select class="custom-select is-valid" name="pChoice" required>
+              <option value="">Before/After Meal</option>
+              <option value="Before Meal">Before Meal</option>
+              <option value="After Meal">After Meal</option>
+          </select>
+        </div>
+		<div class="col-md-2 mb-3">
+          <label for="validationServer03">Noon</label>
+          <select class="custom-select is-valid" name="pChoice" required>
+              <option value="">Before/After Meal</option>
+              <option value="Before Meal">Before Meal</option>
+              <option value="After Meal">After Meal</option>
+          </select>
+        </div>
+		<div class="col-md-2 mb-3">
+          <label for="validationServer03">Evening</label>
+          <select class="custom-select is-valid" name="pChoice" required>
+              <option value="">Before/After Meal</option>
+              <option value="Before Meal">Before Meal</option>
+              <option value="After Meal">After Meal</option>
+          </select>
+        </div>
+    </div>
+
+
+	<div class="form-row">
+		<div class="col-md-2 mb-3">
+			<label for="patient_id">Medicine Name(2)</label>
+			<input type="text" id="patient_id" class="form-control is-valid" name="patient_id" required>
+		</div>
+        <div class="col-md-2 mb-3">
+            <label for="Height">Quantity</label>
+            <input type="text" id="Height" class="form-control is-valid" name="pHeight">
+        </div>
+        <div class="col-md-2 mb-3">
+            <label for="weight">Times/Day</label>
+            <input type="text" id="Weight" class="form-control is-valid" pWeight>
+        </div>
+		<div class="col-md-2 mb-3">
+          <label for="validationServer03">Morning</label>
+          <select class="custom-select is-valid" name="pChoice" required>
+              <option value="">Before/After Meal</option>
+              <option value="Before Meal">Before Meal</option>
+              <option value="After Meal">After Meal</option>
+          </select>
+        </div>
+		<div class="col-md-2 mb-3">
+          <label for="validationServer03">Noon</label>
+          <select class="custom-select is-valid" name="pChoice" required>
+              <option value="">Before/After Meal</option>
+              <option value="Before Meal">Before Meal</option>
+              <option value="After Meal">After Meal</option>
+          </select>
+        </div>
+		<div class="col-md-2 mb-3">
+          <label for="validationServer03">Evening</label>
+          <select class="custom-select is-valid" name="pChoice" required>
+              <option value="">Before/After Meal</option>
+              <option value="Before Meal">Before Meal</option>
+              <option value="After Meal">After Meal</option>
+          </select>
+        </div>
+    </div>
+
+
+	<div class="form-row">
+		<div class="col-md-2 mb-3">
+			<label for="patient_id">Medicine Name(3)</label>
+			<input type="text" id="patient_id" class="form-control is-valid" name="patient_id" required>
+		</div>
+        <div class="col-md-2 mb-3">
+            <label for="Height">Quantity</label>
+            <input type="text" id="Height" class="form-control is-valid" name="pHeight">
+        </div>
+        <div class="col-md-2 mb-3">
+            <label for="weight">Times/Day</label>
+            <input type="text" id="Weight" class="form-control is-valid" pWeight>
+        </div>
+		<div class="col-md-2 mb-3">
+          <label for="validationServer03">Morning</label>
+          <select class="custom-select is-valid" name="pChoice" required>
+              <option value="">Before/After Meal</option>
+              <option value="Before Meal">Before Meal</option>
+              <option value="After Meal">After Meal</option>
+          </select>
+        </div>
+		<div class="col-md-2 mb-3">
+          <label for="validationServer03">Noon</label>
+          <select class="custom-select is-valid" name="pChoice" required>
+              <option value="">Before/After Meal</option>
+              <option value="Before Meal">Before Meal</option>
+              <option value="After Meal">After Meal</option>
+          </select>
+        </div>
+		<div class="col-md-2 mb-3">
+          <label for="validationServer03">Evening</label>
+          <select class="custom-select is-valid" name="pChoice" required>
+              <option value="">Before/After Meal</option>
+              <option value="Before Meal">Before Meal</option>
+              <option value="After Meal">After Meal</option>
+          </select>
+        </div>
+    </div>
+	
+	<br />
+
+
+	<div class="form-row">
+		<div class="col-md-4 mb-3">
+            <label for="doctor_id">Doctor Id</label>
+            <input type="text" id="doctor_id" class="form-control is-valid" name="doctor_id" required>
+        </div>
+    </div>
+
+	<div align="right">
+		<button class="btn btn-primary" type="submit">Submit form</button>
+	</div>
+</form>

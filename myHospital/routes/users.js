@@ -120,6 +120,20 @@ router.showDoctorProfile = function(req, res, next) {
 };
 
 
+/* GET Medical Advise Form */
+router.showMedicalAdviseForm = function(req, res, next) {
+    db.query('SELECT * From Patient ORDER by patient_id DESC LIMIT 1',[], function (err, result, fields) {
+        if (err) throw err;
+        console.log('result = ' + result[0]);
+        res.render('medicalAdvise', {pageTitile: 'Medical Advise Form', profileValue: result[0], message: req.flash('Medical Advise Form is updating!')});
+    });
+}
+
+
+/* POST Medical Advise Form */
+router.postMedicalAdviseForm = function(req, res, next) {
+
+}
 
 /* GET Nurse Entry Form. */
 router.showNurseAdmissionForm = function(req, res, next) {

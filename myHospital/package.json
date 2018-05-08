@@ -12,10 +12,15 @@
     "express": "~4.15.5",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
+    "handlebars-dateformat": "^1.1.1",
+    "handlebars-intl": "^1.1.2",
     "hbs": "~4.0.1",
     "morgan": "~1.9.0",
     "mysql": "^2.14.1",
     "req-flash": "0.0.3",
     "serve-favicon": "~2.4.5"
+  },
+  "devDependencies": {
+    "module-js": "^7.0.1"
   }
 }

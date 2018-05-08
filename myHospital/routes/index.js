@@ -17,6 +17,7 @@ module.exports = function(newApp) {
 
     /* patient-Initial Investigation Form. */
     newApp.get('/patient-investigation', dataController.showPatientInvestigationForm);
+    newApp.post('/patient-investigation', dataController.postPatientInvestigationForm);
 
 
     /* patient-profile page. */

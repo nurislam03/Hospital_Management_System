@@ -164,6 +164,10 @@ encodeurl@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/encodeurl/-/encodeurl-1.0.2.tgz#ad3ff4c86ec2d029322f5a02c3a9a606c95b3f59"
 
+es6-promise@^4.0.5:
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.2.4.tgz#dc4221c2b16518760bd8c39a52d8f356fc00ed29"
+
 escape-html@~1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
@@ -275,6 +279,20 @@ graceful-fs@^4.1.2:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
 
+handlebars-dateformat@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/handlebars-dateformat/-/handlebars-dateformat-1.1.1.tgz#874cc225d1cea1d2f28897b107795def8928b32f"
+  dependencies:
+    moment "^2.18.1"
+
+handlebars-intl@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/handlebars-intl/-/handlebars-intl-1.1.2.tgz#53ab641d19a2d5832ad6a09917511248d6bc6720"
+  dependencies:
+    intl-format-cache "2.0.5"
+    intl-messageformat "1.1.0"
+    intl-relativeformat "1.1.0"
+
 handlebars@4.0.5:
   version "4.0.5"
   resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.0.5.tgz#92c6ed6bb164110c50d4d8d0fbddc70806c6f8e7"
@@ -339,6 +357,26 @@ inherits@2, inherits@2.0.3, inherits@~2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
 
+intl-format-cache@2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/intl-format-cache/-/intl-format-cache-2.0.5.tgz#b484cefcb9353f374f25de389a3ceea1af18d7c9"
+
+intl-messageformat-parser@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-1.1.0.tgz#e8ed8f30853969bf1f5bedef0e944d2b1053409b"
+
+intl-messageformat@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/intl-messageformat/-/intl-messageformat-1.1.0.tgz#f46a168c1bd5e1838ecbddda809a0754727f4422"
+  dependencies:
+    intl-messageformat-parser "1.1.0"
+
+intl-relativeformat@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/intl-relativeformat/-/intl-relativeformat-1.1.0.tgz#86dc7b8b212883de186d9fda56b874012948df20"
+  dependencies:
+    intl-messageformat "1.1.0"
+
 ipaddr.js@1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.4.0.tgz#296aca878a821816e5b85d0a285a99bcff4582f0"
@@ -400,6 +438,16 @@ mime@1.3.4:
 minimist@~0.0.1:
   version "0.0.10"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.10.tgz#de3f98543dbf96082be48ad1a0c7cda836301dcf"
+
+module-js@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/module-js/-/module-js-7.0.1.tgz#c5cf9974886f2844adc2c09694b844b34b619104"
+  dependencies:
+    resource-manager-js "^4.0.1"
+
+moment@^2.18.1:
+  version "2.22.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.1.tgz#529a2e9bf973f259c9643d237fda84de3a26e8ad"
 
 morgan@~1.9.0:
   version "1.9.0"
@@ -538,6 +586,13 @@ req-flash@0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/req-flash/-/req-flash-0.0.3.tgz#5e48b1a319879672a6339e0d603935a77879e470"
 
+resource-manager-js@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/resource-manager-js/-/resource-manager-js-4.0.1.tgz#291e84c424d4d9f236f2f13d00dc77df1025ee52"
+  dependencies:
+    es6-promise "^4.0.5"
+    whatwg-fetch "^2.0.3"
+
 right-align@^0.1.1:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/right-align/-/right-align-0.1.3.tgz#61339b722fe6a3515689210d24e14c96148613ef"
@@ -672,6 +727,10 @@ walk@2.3.9:
   resolved "https://registry.yarnpkg.com/walk/-/walk-2.3.9.tgz#31b4db6678f2ae01c39ea9fb8725a9031e558a7b"
   dependencies:
     foreachasync "^3.0.0"
+
+whatwg-fetch@^2.0.3:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.4.tgz#dde6a5df315f9d39991aa17621853d720b85566f"
 
 window-size@0.1.0:
   version "0.1.0"

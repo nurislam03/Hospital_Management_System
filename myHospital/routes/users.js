@@ -70,6 +70,40 @@ router.showPatientInvestigationForm = function(req, res, next) {
 };
 
 
+router.postPatientInvestigationForm = function(req, res, next) {
+        var patient_id = req.body.patient_id;
+        var height = req.body.pHeight;
+        var weight = req.body.pWeight;
+        var symptom1 = req.body.symptom1;
+        var symptom2 = req.body.symptom2;
+        var symptom3 = req.body.symptom3;
+        var low_bp = req.body.low_bp;
+        var high_bp = req.body.high_bp;
+        var breakfast1 = req.body.breakfast1;
+        var breakfastk2 = req.body.breakfastk2;
+        var breakfastk3 = req.body.breakfastk3;
+        var lunch1 = req.body.lunch1;
+        var lunch2 = req.body.lunch2;
+        var lunch3 = req.body.lunch3;
+        var dinner1 = req.body.dinner1;
+        var dinner2 = req.body.dinner2;
+        var dinner3 = req.body.dinner3;
+        var hobby_game = req.body.hobby_game;
+        var hobby_others = req.body.hobby_others;
+        var disease = req.body.disease;
+        var doctor_id = req.body.doctor_id;
+
+        console.log(JSON.stringify(req.body));
+
+        db.query("INSERT INTO `Patient_info`(`patient_id`, `height`, `weight`, `symptom1`, `symptom2`, `symptom3`, `low_bp`, `high_bp`, `breakfastk1`, `breakfastk2`, `breakfastk3`, `lunch1`, `lunch2`, `lunch3`, `dinner1`, `dinner2`, `dinner3`, `hobby_game`, `hobby_others`, `disease`, `doctor_id`) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [patient_id, height, weight, symptom1, symptom2, symptom3, low_bp, high_bp, breakfast1, breakfastk2, breakfastk3, lunch1, lunch2, lunch3, dinner1, dinner2, dinner3, hobby_game, hobby_others, disease, doctor_id], function(err) {
+            if(err) console.log('there is an error in postPatientInvestigationForm');
+            req.flash('message', 'Patient Investigation info is added successfully!');
+            res.redirect('/');
+        });
+
+};
+
+
 //post doctor
 router.postDoctorAdmissionForm = function(req, res, next) {
 

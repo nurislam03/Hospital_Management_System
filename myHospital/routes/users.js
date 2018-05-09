@@ -259,7 +259,7 @@ router.showDoctorProfile = function(req, res, next) {
 router.showMedicalAdviseForm = function(req, res, next) {
     db.query('SELECT * From Patient ORDER by patient_id DESC LIMIT 1',[], function (err, result, fields) {
         if (err) throw err;
-        console.log('result = ' + result[0]);
+        //console.log('result = ' + result[0]);
         res.render('medicalAdvise', {pageTitile: 'Medical Advise Form', profileValue: result[0], message: req.flash('Medical Advise Form is updating!')});
     });
 }
@@ -267,8 +267,126 @@ router.showMedicalAdviseForm = function(req, res, next) {
 
 /* POST Medical Advise Form */
 router.postMedicalAdviseForm = function(req, res, next) {
+    var patient_id = req.body.patient_id;
+    var doctor_id = req.body.doctor_id;
+    var date_of_advise = req.body.medicineAdviseDate;
 
-}
+    //var prescription_id = req.body.
+    //1
+    var medicine_id1 = req.body.medicineId1;
+    var name_med1 = req.body.name1;
+    var quantity1 = req.body.quantity1;
+    var times_a_day1 = req.body.times_a_day1;
+    var morning1 = req.body.morning1;
+    var noon1 = req.body.noon1;
+    var evening1 = req.body.evening1;
+
+    //2
+    var medicine_id2 = req.body.medicineId2;
+    var name_med2 = req.body.name2;
+    var quantity2 = req.body.quantity2;
+    var times_a_day2 = req.body.times_a_day2;
+    var morning2 = req.body.morning2;
+    var noon2 = req.body.noon2;
+    var evening2 = req.body.evening2;
+
+    //3
+    var medicine_id3 = req.body.medicineId3;
+    var name_med3 = req.body.name3;
+    var quantity3 = req.body.quantity3;
+    var times_a_day3 = req.body.times_a_day3;
+    var morning3 = req.body.morning3;
+    var noon3 = req.body.noon3;
+    var evening3 = req.body.evening3;
+    //var med_cost = req.body.
+
+    var test_name1 = req.body.testName1;
+    var test_no1 = req.body.testNo1;
+    var test_name2 = req.body.testName1;
+    var test_no2 = req.body.testNo1;
+
+    console.log(req.body);
+
+    db.query("INSERT INTO `Prescription`(`patient_id`, `doctor_id`, `date_of_advise`) VALUES(?,?,?)", [patient_id, doctor_id, date_of_advise], function(err) {
+        if(err) console.log('there is an error in postMedicalAdviseForm');
+        //req.flash('message', 'Patient Investigation info is added successfully!');
+        else {
+            db.query('SELECT * From Prescription ORDER by prescription_id DESC LIMIT 1',[], function (err, result, fields) {
+                if (err) throw err;
+                //console.log('result = ' + result[0]);
+
+                var prescription_id = result[0].prescription_id;
+
+                //inserting test Advised by doctor
+                if(test_no1 || test_name1) {
+                    db.query("INSERT INTO `Test`(`prescription_id`, `patient_id`, `doctor_id`, `test_name`, `test_no`) VALUES(?,?,?,?,?)", [prescription_id, patient_id, doctor_id, test_name1, test_no1], function(err) {
+                        if(err) console.log('there is an error in postMedicalAdviseForm - test Record 1');
+                        //req.flash('message', 'Patient Investigation info is added successfully!');
+                    });
+                };
+
+                if(test_no2 || test_name2) {
+                    db.query("INSERT INTO `Test`(`prescription_id`, `patient_id`, `doctor_id`, `test_name`, `test_no`) VALUES(?,?,?,?,?)", [prescription_id, patient_id, doctor_id, test_name2, test_no2], function(err) {
+                        if(err) console.log('there is an error in postMedicalAdviseForm - test Record 2');
+                        //req.flash('message', 'Patient Investigation info is added successfully!');
+                    });
+                };
+
+
+                //inserting med_prescription data
+                //1
+                if(medicine_id1) {
+                    var med_cost1 = 0;
+                    db.query('SELECT * From Medicine Where medicine_id = ?',[medicine_id1], function (err, result, fields) {
+                        if (err) throw err;
+                        //console.log('medicine_id = ' + result[0].unit_price);
+                        med_cost1 = quantity1 * result[0].unit_price;
+
+                        db.query("INSERT INTO `Med_prescription`(`prescription_id`, `patient_id`, `doctor_id`, `medicine_id`, `name_med`, `quantity`, `times_a_day`, `morning`, `noon`, `evening`, `med_cost`) VALUES(?,?,?,?,?,?,?,?,?,?,?)", [prescription_id, patient_id, doctor_id, medicine_id1, name_med1, quantity1, times_a_day1, morning1, noon1, evening1, med_cost1], function(err) {
+                            if(err) console.log('there is an error in postMedicalAdviseForm - Med_prescription 1');
+                            //req.flash('message', 'Patient Investigation info is added successfully!');
+                        });
+                    });
+                };
+
+                //2
+                if(medicine_id2) {
+                    var med_cost2 = 0;
+
+                    db.query('SELECT * From Medicine Where medicine_id = ?',[medicine_id2], function (err, result, fields) {
+                        if (err) throw err;
+                        //console.log('medicine_id = ' + result[0]);
+                        med_cost2 = quantity2 * result[0].unit_price;
+
+                        db.query("INSERT INTO `Med_prescription`(`prescription_id`, `patient_id`, `doctor_id`, `medicine_id`, `name_med`, `quantity`, `times_a_day`, `morning`, `noon`, `evening`, `med_cost`) VALUES(?,?,?,?,?,?,?,?,?,?,?)", [prescription_id, patient_id, doctor_id, medicine_id2, name_med2, quantity2, times_a_day2, morning2, noon2, evening2, med_cost2], function(err) {
+                            if(err) console.log('there is an error in postMedicalAdviseForm - Med_prescription 2');
+                            //req.flash('message', 'Patient Investigation info is added successfully!');
+                        });
+                    });
+                };
+
+                //3
+                if(medicine_id3) {
+                    var med_cost3 = 0;
+
+                    db.query('SELECT * From Medicine Where medicine_id = ?',[medicine_id1], function (err, result, fields) {
+                        if (err) throw err;
+                        //console.log('medicine_id = ' + result[0]);
+                        med_cost3 = quantity3 * result[0].unit_price;
+
+                        db.query("INSERT INTO `Med_prescription`(`prescription_id`, `patient_id`, `doctor_id`, `medicine_id`, `name_med`, `quantity`, `times_a_day`, `morning`, `noon`, `evening`, `med_cost`) VALUES(?,?,?,?,?,?,?,?,?,?,?)", [prescription_id, patient_id, doctor_id, medicine_id3, name_med3, quantity3, times_a_day3, morning3, noon3, evening3, med_cost3], function(err) {
+                            if(err) console.log('there is an error in postMedicalAdviseForm - Med_prescription 3');
+                            req.flash('message', 'Patient Investigation info is added successfully!');
+                            res.render('error', {pageTitile: 'Patient Investigation Form', result: [], message: req.flash('Medicine Advice record stored successfully!')});
+                        });
+                    });
+                };
+
+            });
+        };
+        //res.redirect('/');
+    });
+};
 
 /* GET Nurse Entry Form. */
 router.showNurseAdmissionForm = function(req, res, next) {

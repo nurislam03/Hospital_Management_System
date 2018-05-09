@@ -1,5 +1,5 @@
 
-<form>
+<form action="/add-cabin" method="post">
 	<br />
     <h1 align="center">Cabin's Information Form</h1> <br />
 
@@ -26,22 +26,22 @@
 	<div class="form-row">
 		<div class="col-md-4 mb-3">
 		  <label for="validationServer01">Nurse Supervisor Id</label>
-		  <input type="text" class="form-control is-valid" id="validationServer01" name="wNurseSupervisorID" placeholder="ID">
+		  <input type="text" class="form-control is-valid" id="validationServer01" name="cNurseSupervisorID" placeholder="ID">
 		</div>
 		<div class="col-md-4 mb-3">
 		  <label for="validationServer02">Name</label>
-		  <input type="text" class="form-control is-valid" id="validationServer02" name="wNurseSupeName" placeholder="Last name">
+		  <input type="text" class="form-control is-valid" id="validationServer02" name="cNurseSupeName" placeholder="Last name">
 		</div>
     </div>
 
 	<div class="form-row">
 		<div class="col-md-4 mb-3">
 		  <label for="validationServer01">Nurse Id</label>
-		  <input type="text" class="form-control is-valid" id="validationServer01" name="wNurseSupervisorID" placeholder="ID" required>
+		  <input type="text" class="form-control is-valid" id="validationServer01" name="cNurseID" placeholder="ID" required>
 		</div>
 		<div class="col-md-4 mb-3">
 		  <label for="validationServer02">Name</label>
-		  <input type="text" class="form-control is-valid" id="validationServer02" name="wNurseSupeName" placeholder="Last name">
+		  <input type="text" class="form-control is-valid" id="validationServer02" name="cNurseName" placeholder="name">
 		</div>
     </div>
 
@@ -53,15 +53,15 @@
     <div class="form-row">
         <div class="col-md-4 mb-3">
             <label for="doctorExperience02">Bed Type</label>
-            <input type="text" class="form-control is-valid "id="doctorExperience02" name="wBtype1" placeholder="Bed Type 01"/>
+            <input type="text" class="form-control is-valid "id="doctorExperience02" name="cBtype1" placeholder="Bed Type 01"/>
         </div>
         <div class="col-md-4 mb-3">
             <label for="doctorExperience03">Rent</label>
-            <input type="text" class="form-control is-valid "id="doctorExperience03" name="wBrent1" placeholder="Rent 01"/>
+            <input type="text" class="form-control is-valid "id="doctorExperience03" name="cBrent1" placeholder="Rent 01"/>
         </div>
         <div class="col-md-4 mb-3">
           <label for="validationServer03">Status</label>
-          <select class="custom-select is-valid" name="wStatus1" required>
+          <select class="custom-select is-valid" name="cStatus1" required>
               <option value="">Empty/Occupied</option>
               <option value="empty">Empty</option>
               <option value="Occupied">Occupied</option>
@@ -69,7 +69,7 @@
         </div>
 	</div>
 
-    <br /> 
+    <br />
     <div>
 		<button class="btn btn-primary" type="submit">Submit form</button>
 	</div>

@@ -166,7 +166,7 @@ router.postWordForm = function(req, res, next) {
     var status3 = req.body.wStatus3;
 
     var choice = 'Ward'; //
-    console.log(JSON.stringify(req.body));
+    //console.log(JSON.stringify(req.body));
 
     //inserting into bed
     db.query('INSERT INTO `Bed`(`type`, `rent`, `status`, `nurse_id`, `choice`) VALUES(?,?,?,?,?)', [type1, rent1, status1, nurseId, choice], function(err) {
@@ -212,6 +212,7 @@ router.postWordForm = function(req, res, next) {
                 //inserting into ward
                 db.query('INSERT INTO `Ward`(`name`, `bed_id`) VALUES(?,?)', [name, bed_id], function(err) {
                         if(err) console.log('error in postWordForm');
+                        res.redirect('/');
                 });
             });
     });
@@ -220,15 +221,52 @@ router.postWordForm = function(req, res, next) {
 
 
 
-
+/* Cabin's information */
 router.showCabinForm = function(req, res, next) {
     res.render('cabins/cabinInformationform');
 }
+
+router.postCabinForm = function(req, res, next) {
+    var name = req.body.cName;
+    var nurseId = req.body.cNurseID;
+    //var bedNo1 = req.body.wBno1;
+    var type1 = req.body.cBtype1;
+    var rent1 = req.body.cBrent1;
+    var status1 = req.body.cStatus1;
+
+    var choice = 'Cabin'; // const.
+    console.log(JSON.stringify(req.body));
+
+    db.query('INSERT INTO `Bed`(`type`, `rent`, `status`, `nurse_id`, `choice`) VALUES(?,?,?,?,?)', [type1, rent1, status1, nurseId, choice], function(err) {
+            if(err) console.log('error in postWordForm');
+            //finding last data inserted
+            db.query('SELECT * From Bed ORDER by bed_id DESC LIMIT 1',[], function (err, result, fields) {
+                if (err) throw err;
+                //console.log('result (bed_id) = ' + result[0]);
+
+                var bed_id = result[0].bed_id;
+                //inserting into ward
+                db.query('INSERT INTO `Cabin`(`name`, `bed_id`) VALUES(?,?)', [name, bed_id], function(err) {
+                        if(err) console.log('error in postWordForm');
+                        res.redirect('/');
+                });
+
+            });
+    });
+}
+
+
 
 /* GET Medicine Entry Form. */
 router.showMedicineEntryForm = function(req, res, next) {
     res.render('medicine/medicineEntryForm');
 }
+
+/*  POST medicine entry */
+router.postMedicineEntryForm = function(req, res, next) {
+    
+}
+
 
 
 module.exports = router;

@@ -235,7 +235,7 @@ router.postCabinForm = function(req, res, next) {
     var status1 = req.body.cStatus1;
 
     var choice = 'Cabin'; // const.
-    console.log(JSON.stringify(req.body));
+    //console.log(JSON.stringify(req.body));
 
     db.query('INSERT INTO `Bed`(`type`, `rent`, `status`, `nurse_id`, `choice`) VALUES(?,?,?,?,?)', [type1, rent1, status1, nurseId, choice], function(err) {
             if(err) console.log('error in postWordForm');
@@ -264,7 +264,57 @@ router.showMedicineEntryForm = function(req, res, next) {
 
 /*  POST medicine entry */
 router.postMedicineEntryForm = function(req, res, next) {
-    
+    var supplier_id = req.body.mSupId;
+    var supplier_name = req.body.mSupName;
+    var date_of_supply = req.body.mSupplyDate;
+
+    var name1 = req.body.mName1;
+    var type1 = req.body.mType1;
+    var unit_price1 = req.body.mUnitPrice1;
+    var quantity1 = req.body.mQuantity1;
+    var manufacture_date1 = req.body.mManufactureDate1;
+    var expiry_date1 = req.body.mExpiryDate1;
+
+    var name2 = req.body.mName2;
+    var type2 = req.body.mType2;
+    var unit_price2 = req.body.mUnitPrice2;
+    var quantity2 = req.body.mQuantity2;
+    var manufacture_date2 = req.body.mManufactureDate2;
+    var expiry_date2 = req.body.mExpiryDate2;
+
+    var name3 = req.body.mName3;
+    var type3 = req.body.mType3;
+    var unit_price3 = req.body.mUnitPrice3;
+    var quantity3 = req.body.mQuantity3;
+    var manufacture_date3 = req.body.mManufactureDate3;
+    var expiry_date3 = req.body.mExpiryDate3;
+
+    var name4 = req.body.mName4;
+    var type4 = req.body.mType4;
+    var unit_price4 = req.body.mUnitPrice4;
+    var quantity4 = req.body.mQuantity4;
+    var manufacture_date4 = req.body.mManufactureDate4;
+    var expiry_date4 = req.body.mExpiryDate4;
+
+    //console.log(JSON.stringify(req.body));
+    /*console.log(name1 + " " + type1 + " " + unit_price1 + " " + manufacture_date1 + " " + expiry_date1);  */
+
+    db.query("INSERT INTO `Medicine`(`supplier_id`, `supplier_name`, `date_of_supply`, `name`, `type`, `unit_price`, `quantity`, `manufacture_date`, `expiry_date`) VALUES(?,?,?,?,?,?,?,?,?)", [supplier_id, supplier_name, date_of_supply, name1, type1, unit_price1, quantity1, manufacture_date1, expiry_date1], function(err) {
+        if(err) console.log('there is an error in postMedicineEntryForm 1');
+    });
+
+    db.query("INSERT INTO `Medicine`(`supplier_id`, `supplier_name`, `date_of_supply`, `name`, `type`, `unit_price`, `quantity`, `manufacture_date`, `expiry_date`) VALUES(?,?,?,?,?,?,?,?,?)", [supplier_id, supplier_name, date_of_supply, name2, type2, unit_price2, quantity2, manufacture_date2, expiry_date2], function(err) {
+        if(err) console.log('there is an error in postMedicineEntryForm 2');
+    });
+
+    db.query("INSERT INTO `Medicine`(`supplier_id`, `supplier_name`, `date_of_supply`, `name`, `type`, `unit_price`, `quantity`, `manufacture_date`, `expiry_date`) VALUES(?,?,?,?,?,?,?,?,?)", [supplier_id, supplier_name, date_of_supply, name3, type3, unit_price3, quantity3, manufacture_date3, expiry_date3], function(err) {
+        if(err) console.log('there is an error in postMedicineEntryForm 3');
+    });
+
+    db.query("INSERT INTO `Medicine`(`supplier_id`, `supplier_name`, `date_of_supply`, `name`, `type`, `unit_price`, `quantity`, `manufacture_date`, `expiry_date`) VALUES(?,?,?,?,?,?,?,?,?)", [supplier_id, supplier_name, date_of_supply, name4, type4, unit_price4, quantity4, manufacture_date4, expiry_date4], function(err) {
+        if(err) console.log('there is an error in postMedicineEntryForm 4');
+        res.redirect('/');
+    });
 }
 
 

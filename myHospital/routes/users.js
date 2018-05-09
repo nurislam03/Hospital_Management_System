@@ -43,6 +43,34 @@ router.postPatientAdmissionForm = function(req, res, next) {
 
     db.query("INSERT INTO `Patient`(`admission_date`, `first_name`, `middle_name`, `last_name`, `birth_date`, `mobile1`, `mobile2`, `present_streetnum`, `present_streetname`, `present_area`, `present_thana`, `present_district`, `permanent_streetnum`, `permanent_streetname`, `permanent_area`, `permanent_thana`, `permanent_district`, `profession`, `amount_deposited`, `choice`) VALUES(? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?)",[aDate, fName, mName, lName, bDate, mobile1, mobile2, pPresentStreetNo, pPresentStreetName, pPresentArea, pPresentThana, pPresentDistrict, pPerStreeNo, pPerStreetName, pPerArea, pPerThana, pPerDistrict, pProfession, pDepositedAmount, pChoice], function(err) {
         if(err) console.log('there is an error in insertion');
+        else {
+
+            db.query('SELECT * From Patient ORDER by patient_id DESC LIMIT 1',[], function (err, result, fields) {
+                if (err) throw err;
+                //console.log(result[0]);
+                else {
+                    var p_id = result[0].patient_id;
+
+                    db.query('SELECT * From Bed Where status = ? ORDER by bed_id ASC LIMIT 1',["empty"], function (err1, result1, fields1) {
+                        if (err1) throw err;
+                        //console.log(result1[0].status);
+                        else {
+                            var b_id = result1[0].bed_id;
+
+                            //inserting admit table
+                            db.query("INSERT INTO `Admit`(`patient_id`, `bed_id`) VALUES(?,?)", [p_id, b_id], function(err) {
+                                if(err) console.log('there is an error in Admit table insertion');
+                            });
+
+                            //updating bed status
+                            db.query("UPDATE Bed SET status = ? Where bed_id = ?", ['Occupied', b_id], function(err) {
+                                if(err) console.log('there is an error in bed status update!');
+                            });
+                        };
+                    });
+                };
+            });
+        };
         req.flash('message', 'New Patient is added successfully!');
         res.redirect('/patient-profile');
     });

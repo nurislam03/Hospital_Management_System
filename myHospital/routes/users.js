@@ -104,14 +104,149 @@ router.postPatientInvestigationForm = function(req, res, next) {
 };
 
 
-//post doctor
-router.postDoctorAdmissionForm = function(req, res, next) {
-
-};
 
 /* GET add-doctor Form. */
 router.showDoctorAdmissionForm = function(req, res, next) {
     res.render('doctors/doctorInformation');
+};
+
+//post doctor
+router.postDoctorAdmissionForm = function(req, res, next) {
+    var first_name = req.body.dFname;
+    var middle_name = req.body.dMname;
+    var last_name = req.body.dLname;
+    var birth_date = req.body.dbirthDate;
+    var appointment_date = req.body.dAdmissionDate;
+    //1 Q
+    var degree1 = req.body.degree1;
+    var institute1 = req.body.board1;
+    var year11 = req.body.year1;
+    var cgpa1 = req.body.cgpa1;
+    var position1 = req.body.position1;
+
+    //2 Q
+    var degree2 = req.body.degree2;
+    var institute2 = req.body.board2;
+    var year12 = req.body.year2;
+    var cgpa2 = req.body.cgpa2;
+    var position2 = req.body.position2;
+    //3 Q.
+    var degree3 = req.body.degree3;
+    var institute3 = req.body.board3;
+    var year13 = req.body.year3;
+    var cgpa3 = req.body.cgpa3;
+    var position3 = req.body.position3;
+    //4 Q
+    var degree4 = req.body.degree4;
+    var institute4 = req.body.board4;
+    var year14 = req.body.year4;
+    var cgpa4 = req.body.cgpa4;
+    var position4 = req.body.position4;
+    //5 Q
+    var degree5 = req.body.degree5;
+    var institute5 = req.body.board5;
+    var year15 = req.body.year5;
+    var cgpa5 = req.body.cgpa5;
+    var position5 = req.body.position5;
+
+    //1 Exp
+    var job_title1 = req.body.dJob1;
+    var from11 = req.body.dFrom1;
+    var to11 = req.body.dTo1;
+    var organization1 = req.body.dOrgan1;
+    //2
+    var job_title2 = req.body.dJob2;
+    var from12 = req.body.dFrom2;
+    var to12 = req.body.dTo2;
+    var organization2 = req.body.dOrgan2;
+    //3
+    var job_title3 = req.body.dJob3;
+    var from13 = req.body.dFrom3;
+    var to13 = req.body.dTo3;
+    var organization3 = req.body.dOrgan3;
+
+    // 1 Membership
+    var membership_type1 = req.body.dMemBMA;
+    var membership_type2 = req.body.dMemBMS;
+    var membership_type3 = req.body.dMemAMS;
+    var membership_type4 =  req.body.dMemOthers;
+
+    //console.log(req.body);
+
+    db.query("INSERT INTO `Doctor`(`first_name`, `middle_name`, `last_name`, `birth_date`, `appointment_date`) VALUES(?,?,?,?,?)", [first_name, middle_name, last_name, birth_date, appointment_date], function(err) {
+        if(err) console.log('there is an error in postDoctorAdmissionForm');
+        //req.flash('message', 'Patient Investigation info is added successfully!');
+
+        //finding last data inserted
+        db.query('SELECT * From Doctor ORDER by doctor_id DESC LIMIT 1',[], function (err, result, fields) {
+            if (err) throw err;
+            //console.log('result (bed_id) = ' + result[0]);
+            else{
+                var doctor_id = result[0].doctor_id;
+                //inserting Educational Qualifications
+                db.query('INSERT INTO `Doc_educational_qualification`(`doctor_id`, `degree`, `institute`, `year1`, `cgpa`, `position`) VALUES(?,?,?,?,?,?)', [doctor_id, degree1, institute1, year11, cgpa1, position1], function(err) {
+                        if(err) console.log('error in postNurseEdeuQualification-1');
+                });
+                //2
+                db.query('INSERT INTO `Doc_educational_qualification`(`doctor_id`, `degree`, `institute`, `year1`, `cgpa`, `position`) VALUES(?,?,?,?,?,?)', [doctor_id, degree2, institute2, year12, cgpa2, position2], function(err) {
+                        if(err) console.log('error in postNurseEdeuQualification-2');
+                });
+                //3
+                db.query('INSERT INTO `Doc_educational_qualification`(`doctor_id`, `degree`, `institute`, `year1`, `cgpa`, `position`) VALUES(?,?,?,?,?,?)', [doctor_id, degree3, institute3, year13, cgpa3, position3], function(err) {
+                        if(err) console.log('error in postNurseEdeuQualification-3');
+                });
+                //4
+                db.query('INSERT INTO `Doc_educational_qualification`(`doctor_id`, `degree`, `institute`, `year1`, `cgpa`, `position`) VALUES(?,?,?,?,?,?)', [doctor_id, degree4, institute4, year14, cgpa4, position4], function(err) {
+                        if(err) console.log('error in postNurseEdeuQualification-4');
+                });
+                //5
+                db.query('INSERT INTO `Doc_educational_qualification`(`doctor_id`, `degree`, `institute`, `year1`, `cgpa`, `position`) VALUES(?,?,?,?,?,?)', [doctor_id, degree5, institute5, year15, cgpa5, position5], function(err) {
+                        if(err) console.log('error in postNurseEdeuQualification-5');
+                });
+
+
+                // inserting job experience
+                db.query('INSERT INTO `Doc_experience`(`doctor_id`, `job_title`, `from1`, `to1`, `organization`)  VALUES(?,?,?,?,?)', [doctor_id, job_title1, from11, to11, organization1], function(err) {
+                        if(err) console.log('error in postDoctorJobExperience-1');
+                });
+                //2
+                db.query('INSERT INTO `Doc_experience`(`doctor_id`, `job_title`, `from1`, `to1`, `organization`) VALUES(?,?,?,?,?)', [doctor_id, job_title2, from12, to12, organization2], function(err) {
+                        if(err) console.log('error in postDoctorJobExperience-2');
+                });
+                //3
+                db.query('INSERT INTO `Doc_experience`(`doctor_id`, `job_title`, `from1`, `to1`, `organization`) VALUES(?,?,?,?,?)', [doctor_id, job_title3, from13, to13, organization3], function(err) {
+                        if(err) console.log('error in postDoctorJobExperience-3');
+                });
+
+                // inserting membership
+                if(membership_type1) {
+                    db.query('INSERT INTO `Membership`(`doctor_id`, `membership_type`) VALUES(?,?)', [doctor_id, membership_type1], function(err) {
+                            if(err) console.log('error in postDoctorMembershipType-1');
+                    });
+                }
+                //2
+                if(membership_type2) {
+                    db.query('INSERT INTO `Membership`(`doctor_id`, `membership_type`) VALUES(?,?)', [doctor_id, membership_type2], function(err) {
+                            if(err) console.log('error in postDoctorMembershipType-2');
+                    });
+                };
+                //
+                if(membership_type3) {
+                    db.query('INSERT INTO `Membership`(`doctor_id`, `membership_type`) VALUES(?,?)', [doctor_id, membership_type3], function(err) {
+                            if(err) console.log('error in postDoctorMembershipType-3');
+                    });
+                };
+                //4
+                if(membership_type4) {
+                    db.query('INSERT INTO `Membership`(`doctor_id`, `membership_type`) VALUES(?,?)', [doctor_id, membership_type4], function(err) {
+                            if(err) console.log('error in postDoctorMembershipType-4');
+                    });
+                };
+            };
+
+        });
+        res.redirect('/');
+    });
 };
 
 /* GET doctor-profile page. */
@@ -233,8 +368,6 @@ router.postNurseAdmissionForm = function(req, res, next) {
 
         });
     });
-
-
 
 }
 

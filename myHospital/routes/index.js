@@ -26,7 +26,7 @@ module.exports = function(newApp) {
 
     /* Doctor */
     newApp.get('/add-doctor', dataController.showDoctorAdmissionForm);
-    newApp.get('/add-doctor', dataController.postDoctorAdmissionForm);
+    newApp.post('/add-doctor', dataController.postDoctorAdmissionForm);
 
 
     /* doctor-profile page. */

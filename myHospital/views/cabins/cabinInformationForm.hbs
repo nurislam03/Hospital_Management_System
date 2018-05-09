@@ -1,0 +1,76 @@
+
+<form>
+	<br />
+    <h1 align="center">Cabin's Information Form</h1> <br />
+
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="validationServer01">Cabin name</label>
+        <input type="text" class="form-control is-valid" id="validationServer01" name="cName" placeholder="Cabin Name" value="">
+      </div>
+    </div>
+
+<!--
+    <div class="form-row">
+		<div class="col-md-4 mb-3">
+		  <label for="validationServer01">Register Id</label>
+		  <input type="text" class="form-control is-valid" id="validationServer01" name="wRegisterID" placeholder="Register ID">
+		</div>
+		<div class="col-md-4 mb-3">
+		  <label for="validationServer02">Register Name</label>
+		  <input type="text" class="form-control is-valid" id="validationServer02" name="wRname" placeholder="Register Name">
+		</div>
+    </div>
+-->
+
+	<div class="form-row">
+		<div class="col-md-4 mb-3">
+		  <label for="validationServer01">Nurse Supervisor Id</label>
+		  <input type="text" class="form-control is-valid" id="validationServer01" name="wNurseSupervisorID" placeholder="ID">
+		</div>
+		<div class="col-md-4 mb-3">
+		  <label for="validationServer02">Name</label>
+		  <input type="text" class="form-control is-valid" id="validationServer02" name="wNurseSupeName" placeholder="Last name">
+		</div>
+    </div>
+
+	<div class="form-row">
+		<div class="col-md-4 mb-3">
+		  <label for="validationServer01">Nurse Id</label>
+		  <input type="text" class="form-control is-valid" id="validationServer01" name="wNurseSupervisorID" placeholder="ID" required>
+		</div>
+		<div class="col-md-4 mb-3">
+		  <label for="validationServer02">Name</label>
+		  <input type="text" class="form-control is-valid" id="validationServer02" name="wNurseSupeName" placeholder="Last name">
+		</div>
+    </div>
+
+
+
+
+    <br /> <b>Bed's details</b> <br /> <br />
+
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label for="doctorExperience02">Bed Type</label>
+            <input type="text" class="form-control is-valid "id="doctorExperience02" name="wBtype1" placeholder="Bed Type 01"/>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="doctorExperience03">Rent</label>
+            <input type="text" class="form-control is-valid "id="doctorExperience03" name="wBrent1" placeholder="Rent 01"/>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationServer03">Status</label>
+          <select class="custom-select is-valid" name="wStatus1" required>
+              <option value="">Empty/Occupied</option>
+              <option value="empty">Empty</option>
+              <option value="Occupied">Occupied</option>
+          </select>
+        </div>
+	</div>
+
+    <br /> 
+    <div>
+		<button class="btn btn-primary" type="submit">Submit form</button>
+	</div>
+</form>

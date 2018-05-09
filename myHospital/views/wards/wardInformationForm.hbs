@@ -21,6 +21,10 @@
     </div>
 
 	<div class="form-row">
+        <div class="col-md-4 mb-3">
+		  <label for="validationServer01">Nurse Id</label>
+		  <input type="text" class="form-control is-valid" id="validationServer01" name="wNurseID" placeholder="ID">
+		</div>
 		<div class="col-md-4 mb-3">
 		  <label for="validationServer01">Nurse Supervisor Id</label>
 		  <input type="text" class="form-control is-valid" id="validationServer01" name="wNurseSupervisorID" placeholder="ID">
@@ -48,8 +52,12 @@
             <input type="text" class="form-control is-valid "id="doctorExperience03" name="wBrent1" placeholder="Rent 01"/>
         </div>
         <div class="col-md-3 mb-3">
-            <label for="doctorExperience04">Status (Empty/Occupied)</label>
-            <input type="text" class="form-control is-valid "id="doctorExperience04" name="wStatus1" placeholder="Status 01"/>
+          <label for="validationServer03">Status</label>
+          <select class="custom-select is-valid" name="wStatus1" required>
+              <option value="">Empty/Occupied</option>
+              <option value="empty">Empty</option>
+              <option value="Occupied">Occupied</option>
+          </select>
         </div>
 
 
@@ -66,8 +74,12 @@
             <input type="text" class="form-control is-valid "id="doctorExperience03" name="wBrent2" placeholder="Rent 02"/>
         </div>
         <div class="col-md-3 mb-3">
-            <label for="doctorExperience04">Status (Empty/Occupied)</label>
-            <input type="text" class="form-control is-valid "id="doctorExperience04" name="wStatus2" placeholder="Status 02"/>
+          <label for="validationServer03">Status</label>
+          <select class="custom-select is-valid" name="wStatus2" required>
+              <option value="">Empty/Occupied</option>
+              <option value="empty">Empty</option>
+              <option value="Occupied">Occupied</option>
+          </select>
         </div>
 
 
@@ -84,8 +96,12 @@
             <input type="text" class="form-control is-valid "id="doctorExperience03" name="wBrent3" placeholder="Rent 03"/>
         </div>
         <div class="col-md-3 mb-3">
-            <label for="doctorExperience04">Status (Empty/Occupied)</label>
-            <input type="text" class="form-control is-valid "id="doctorExperience04" name="wStatus3" placeholder="Status 03"/>
+          <label for="validationServer03">Status</label>
+          <select class="custom-select is-valid" name="wStatus3" required>
+              <option value="">Empty/Occupied</option>
+              <option value="empty">Empty</option>
+              <option value="Occupied">Occupied</option>
+          </select>
         </div>
     </div>
 

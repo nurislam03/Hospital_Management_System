@@ -145,6 +145,10 @@ router.showWordForm = function(req, res, next) {
     res.render('wards/wardInformationform');
 }
 
+router.showCabinForm = function(req, res, next) {
+    res.render('cabins/cabinInformationform');
+}
+
 /* GET Medicine Entry Form. */
 router.showMedicineEntryForm = function(req, res, next) {
     res.render('medicine/medicineEntryForm');

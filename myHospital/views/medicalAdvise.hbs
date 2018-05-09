@@ -56,6 +56,14 @@
 <h5>Medicine Advise</h5> <br />
 <form action="/medical-advise" method="post">
 	<div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label for="doctor_id">Doctor Id</label>
+            <input type="text" id="doctor_id" class="form-control is-valid" name="doctor_id" required>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="patient_id">Re Write Patient Id</label>
+            <input type="text" id="patient_id" class="form-control is-valid" name="patient_id" required>
+        </div>
 		<div class="col-md-4 mb-3">
             <label for="MedicineAdviseDAte">Date of Advise</label>
             <input type="date" id="dateOfAdvise" class="form-control is-valid" name="medicineAdviseDate">
@@ -71,10 +79,14 @@
 			<input type="text" id="patient_id" class="form-control is-valid" name="patient_id" required>
 		</div>
         <div class="col-md-2 mb-3">
+			<label for="medicineId1">Medicine Id</label>
+			<input type="text" id="medicineId1" class="form-control is-valid" name="medicineId1" required>
+		</div>
+        <div class="col-md-1 mb-3">
             <label for="Height">Quantity</label>
             <input type="text" id="Height" class="form-control is-valid" name="pHeight">
         </div>
-        <div class="col-md-2 mb-3">
+        <div class="col-md-1 mb-3">
             <label for="weight">Times/Day</label>
             <input type="text" id="Weight" class="form-control is-valid" pWeight>
         </div>
@@ -111,10 +123,14 @@
 			<input type="text" id="patient_id" class="form-control is-valid" name="patient_id" required>
 		</div>
         <div class="col-md-2 mb-3">
+			<label for="medicineId2">Medicine Id</label>
+			<input type="text" id="medicineId2" class="form-control is-valid" name="medicineId2" required>
+		</div>
+        <div class="col-md-1 mb-3">
             <label for="Height">Quantity</label>
             <input type="text" id="Height" class="form-control is-valid" name="pHeight">
         </div>
-        <div class="col-md-2 mb-3">
+        <div class="col-md-1 mb-3">
             <label for="weight">Times/Day</label>
             <input type="text" id="Weight" class="form-control is-valid" pWeight>
         </div>
@@ -151,10 +167,14 @@
 			<input type="text" id="patient_id" class="form-control is-valid" name="patient_id" required>
 		</div>
         <div class="col-md-2 mb-3">
+			<label for="medicineId3">Medicine Id</label>
+			<input type="text" id="medicineId3" class="form-control is-valid" name="medicineId3" required>
+		</div>
+        <div class="col-md-1 mb-3">
             <label for="Height">Quantity</label>
             <input type="text" id="Height" class="form-control is-valid" name="pHeight">
         </div>
-        <div class="col-md-2 mb-3">
+        <div class="col-md-1 mb-3">
             <label for="weight">Times/Day</label>
             <input type="text" id="Weight" class="form-control is-valid" pWeight>
         </div>
@@ -183,16 +203,30 @@
           </select>
         </div>
     </div>
-	
+
 	<br />
 
-
-	<div class="form-row">
-		<div class="col-md-4 mb-3">
-            <label for="doctor_id">Doctor Id</label>
-            <input type="text" id="doctor_id" class="form-control is-valid" name="doctor_id" required>
+    <h5>Test Details</h5> <br />
+    <div class="form-row">
+		<div class="col-md-3 mb-3">
+            <label for="testNo1">Test No</label>
+            <input type="text" id="testNo1" class="form-control is-valid" name="testNo1" required>
+        </div>
+        <div class="col-md-3 mb-3">
+            <label for="testName1">Test Name</label>
+            <input type="text" id="testName1" class="form-control is-valid" name="testName1" required>
+        </div>
+        <div class="col-md-3 mb-3">
+            <label for="testNo2">Test No</label>
+            <input type="text" id="testNo2" class="form-control is-valid" name="testNo2">
+        </div>
+        <div class="col-md-3 mb-3">
+            <label for="testName2">Test Name</label>
+            <input type="text" id="testName2" class="form-control is-valid" name="testName2">
         </div>
     </div>
+
+
 
 	<div align="right">
 		<button class="btn btn-primary" type="submit">Submit form</button>

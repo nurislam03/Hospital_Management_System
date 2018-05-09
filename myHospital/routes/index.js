@@ -43,6 +43,7 @@ module.exports = function(newApp) {
 
     /* Ward */
     newApp.get('/add-ward', dataController.showWordForm);
+    newApp.post('/add-ward', dataController.postWordForm);
 
     /* Ward */
     newApp.get('/add-cabin', dataController.showCabinForm);

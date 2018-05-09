@@ -93,7 +93,7 @@ router.postPatientInvestigationForm = function(req, res, next) {
         var disease = req.body.disease;
         var doctor_id = req.body.doctor_id;
 
-        console.log(JSON.stringify(req.body));
+        //console.log(JSON.stringify(req.body));
 
         db.query("INSERT INTO `Patient_info`(`patient_id`, `height`, `weight`, `symptom1`, `symptom2`, `symptom3`, `low_bp`, `high_bp`, `breakfastk1`, `breakfastk2`, `breakfastk3`, `lunch1`, `lunch2`, `lunch3`, `dinner1`, `dinner2`, `dinner3`, `hobby_game`, `hobby_others`, `disease`, `doctor_id`) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [patient_id, height, weight, symptom1, symptom2, symptom3, low_bp, high_bp, breakfast1, breakfastk2, breakfastk3, lunch1, lunch2, lunch3, dinner1, dinner2, dinner3, hobby_game, hobby_others, disease, doctor_id], function(err) {
             if(err) console.log('there is an error in postPatientInvestigationForm');
@@ -144,6 +144,82 @@ router.showNurseAdmissionForm = function(req, res, next) {
 router.showWordForm = function(req, res, next) {
     res.render('wards/wardInformationform');
 }
+
+/* POST ward Information form */
+router.postWordForm = function(req, res, next) {
+    console.log("i am here at postWordForm");
+    var name = req.body.wName;
+    var nurseId = req.body.wNurseID;
+    //var bedNo1 = req.body.wBno1;
+    var type1 = req.body.wBtype1;
+    var rent1 = req.body.wBrent1;
+    var status1 = req.body.wStatus1;
+
+    //var bedNo2 = req.body.wBno2;
+    var type2 = req.body.wBtype2;
+    var rent2 = req.body.wBrent2;
+    var status2 = req.body.wStatus2;
+
+    //var bedNo3 = req.body.wBno3;
+    var type3 = req.body.wBtype3;
+    var rent3 = req.body.wBrent3;
+    var status3 = req.body.wStatus3;
+
+    var choice = 'Ward'; //
+    console.log(JSON.stringify(req.body));
+
+    //inserting into bed
+    db.query('INSERT INTO `Bed`(`type`, `rent`, `status`, `nurse_id`, `choice`) VALUES(?,?,?,?,?)', [type1, rent1, status1, nurseId, choice], function(err) {
+            if(err) console.log('error in postWordForm');
+            //finding last data inserted
+            db.query('SELECT * From Bed ORDER by bed_id DESC LIMIT 1',[], function (err, result, fields) {
+                if (err) throw err;
+                //console.log('result (bed_id) = ' + result[0]);
+
+                var bed_id = result[0].bed_id;
+                //inserting into ward
+                db.query('INSERT INTO `Ward`(`name`, `bed_id`) VALUES(?,?)', [name, bed_id], function(err) {
+                        if(err) console.log('error in postWordForm');
+                });
+            });
+    });
+
+    // for 2nd bed
+    db.query('INSERT INTO `Bed`(`type`, `rent`, `status`, `nurse_id`, `choice`) VALUES(?,?,?,?,?)', [type2, rent2, status2, nurseId, choice], function(err) {
+            if(err) console.log('error in postWordForm');
+            //finding last data inserted
+            db.query('SELECT * From Bed ORDER by bed_id DESC LIMIT 1',[], function (err, result, fields) {
+                if (err) throw err;
+                //console.log('result (bed_id) = ' + result[0]);
+
+                var bed_id = result[0].bed_id;
+                //inserting into ward
+                db.query('INSERT INTO `Ward`(`name`, `bed_id`) VALUES(?,?)', [name, bed_id], function(err) {
+                        if(err) console.log('error in postWordForm');
+                });
+            });
+    });
+
+    // for 3rd bed
+    db.query('INSERT INTO `Bed`(`type`, `rent`, `status`, `nurse_id`, `choice`) VALUES(?,?,?,?,?)', [type3, rent3, status3, nurseId, choice], function(err) {
+            if(err) console.log('error in postWordForm');
+            //finding last data inserted
+            db.query('SELECT * From Bed ORDER by bed_id DESC LIMIT 1',[], function (err, result, fields) {
+                if (err) throw err;
+                //console.log('result (bed_id) = ' + result[0]);
+
+                var bed_id = result[0].bed_id;
+                //inserting into ward
+                db.query('INSERT INTO `Ward`(`name`, `bed_id`) VALUES(?,?)', [name, bed_id], function(err) {
+                        if(err) console.log('error in postWordForm');
+                });
+            });
+    });
+
+};
+
+
+
 
 router.showCabinForm = function(req, res, next) {
     res.render('cabins/cabinInformationform');

@@ -140,6 +140,106 @@ router.showNurseAdmissionForm = function(req, res, next) {
     res.render('nurses/nurseInformationForm');
 }
 
+
+router.postNurseAdmissionForm = function(req, res, next) {
+    var first_name = req.body.nFname;
+    var middle_name = req.body.nMname;
+    var last_name = req.body.nLname;
+    var birth_date = req.body.birthDate;
+    var appointment_date = req.body.appoinmentDate;
+
+    var degree1 = req.body.degree1;
+    var institute1 = req.body.board1;
+    var year11 = req.body.year1;
+    var cgpa1 = req.body.cgpa1;
+    var position1 = req.body.position1;
+
+    var job_title1 = req.body.nJob1;
+    var from11 = req.body.nFrom1;
+    var to11 = req.body.nTo1;
+    var organization1 = req.body.nOrgan1;
+    //2
+    var degree2 = req.body.degree2;
+    var institute2 = req.body.board2;
+    var year12 = req.body.year2;
+    var cgpa2 = req.body.cgpa2;
+    var position2 = req.body.position2;
+
+    var job_title2 = req.body.nJob2;
+    var from12 = req.body.nFrom2;
+    var to12 = req.body.nTo2;
+    var organization2 = req.body.nOrgan2;
+    //3
+    var degree3 = req.body.degree3;
+    var institute3 = req.body.board3;
+    var year13 = req.body.year3;
+    var cgpa3 = req.body.cgpa3;
+    var position3 = req.body.position3;
+
+    var job_title3 = req.body.nJob3;
+    var from13 = req.body.nFrom3;
+    var to13 = req.body.nTo3;
+    var organization3 = req.body.nOrgan3;
+    //4
+    var degree4 = req.body.degree4;
+    var institute4 = req.body.board4;
+    var year14 = req.body.year4;
+    var cgpa4 = req.body.cgpa4;
+    var position4 = req.body.position4;
+
+    console.log(req.body);
+
+    db.query("INSERT INTO `Nurse`(`first_name`, `middle_name`, `last_name`, `birth_date`, `appointment_date`) VALUES(?,?,?,?,?)", [first_name, middle_name, last_name, birth_date, appointment_date], function(err) {
+        if(err) console.log('there is an error in postNurseAdmissionForm');
+        //req.flash('message', 'Patient Investigation info is added successfully!');
+
+        //finding last data inserted
+        db.query('SELECT * From Nurse ORDER by nurse_id DESC LIMIT 1',[], function (err, result, fields) {
+            if (err) throw err;
+            //console.log('result (bed_id) = ' + result[0]);
+            else{
+                var nurse_id = result[0].nurse_id;
+                //inserting Educational Qualifications
+                db.query('INSERT INTO `Nurse_educational_qualification`(`nurse_id`, `degree`, `institute`, `year1`, `cgpa`, `position`) VALUES(?,?,?,?,?,?)', [nurse_id, degree1, institute1, year11, cgpa1, position1], function(err) {
+                        if(err) console.log('error in postNurseEdeuQualification-1');
+                });
+                //2
+                db.query('INSERT INTO `Nurse_educational_qualification`(`nurse_id`, `degree`, `institute`, `year1`, `cgpa`, `position`) VALUES(?,?,?,?,?,?)', [nurse_id, degree2, institute2, year12, cgpa2, position2], function(err) {
+                        if(err) console.log('error in postNurseEdeuQualification-2');
+                });
+                //3
+                db.query('INSERT INTO `Nurse_educational_qualification`(`nurse_id`, `degree`, `institute`, `year1`, `cgpa`, `position`) VALUES(?,?,?,?,?,?)', [nurse_id, degree3, institute3, year13, cgpa3, position3], function(err) {
+                        if(err) console.log('error in postNurseEdeuQualification-3');
+                });
+                //4
+                db.query('INSERT INTO `Nurse_educational_qualification`(`nurse_id`, `degree`, `institute`, `year1`, `cgpa`, `position`) VALUES(?,?,?,?,?,?)', [nurse_id, degree4, institute4, year14, cgpa4, position4], function(err) {
+                        if(err) console.log('error in postNurseEdeuQualification-4');
+                });
+
+                // inserting job experience
+                db.query('INSERT INTO `Nurse_experience`(`nurse_id`, `job_title`, `from1`, `to1`, `organization`) VALUES(?,?,?,?,?)', [nurse_id, job_title1, from11, to11, organization1], function(err) {
+                        if(err) console.log('error in postNurseJobExperience-1');
+                });
+                //2
+                db.query('INSERT INTO `Nurse_experience`(`nurse_id`, `job_title`, `from1`, `to1`, `organization`) VALUES(?,?,?,?,?)', [nurse_id, job_title2, from12, to12, organization2], function(err) {
+                        if(err) console.log('error in postNurseJobExperience-1');
+                });
+                //3
+                db.query('INSERT INTO `Nurse_experience`(`nurse_id`, `job_title`, `from1`, `to1`, `organization`) VALUES(?,?,?,?,?)', [nurse_id, job_title3, from13, to13, organization3], function(err) {
+                        if(err) console.log('error in postNurseJobExperience-1');
+                        res.redirect('/');
+                });
+            };
+
+        });
+    });
+
+
+
+}
+
+
+
 /* GET Ward Information Form. */
 router.showWordForm = function(req, res, next) {
     res.render('wards/wardInformationform');
@@ -297,7 +397,6 @@ router.postMedicineEntryForm = function(req, res, next) {
     var expiry_date4 = req.body.mExpiryDate4;
 
     //console.log(JSON.stringify(req.body));
-    /*console.log(name1 + " " + type1 + " " + unit_price1 + " " + manufacture_date1 + " " + expiry_date1);  */
 
     db.query("INSERT INTO `Medicine`(`supplier_id`, `supplier_name`, `date_of_supply`, `name`, `type`, `unit_price`, `quantity`, `manufacture_date`, `expiry_date`) VALUES(?,?,?,?,?,?,?,?,?)", [supplier_id, supplier_name, date_of_supply, name1, type1, unit_price1, quantity1, manufacture_date1, expiry_date1], function(err) {
         if(err) console.log('there is an error in postMedicineEntryForm 1');

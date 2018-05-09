@@ -39,6 +39,7 @@ module.exports = function(newApp) {
 
     /* Nurse */
     newApp.get('/add-nurse', dataController.showNurseAdmissionForm);
+    newApp.post('/add-nurse', dataController.postNurseAdmissionForm);
 
 
     /* Ward */

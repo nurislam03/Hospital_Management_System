@@ -1,0 +1,59 @@
+
+<!--
+<form action="/patient-bill" method="get">
+
+	<br /> <br />
+	<div class="row">
+		<div class="col-md-6 mb-3">
+			<input type="text" class="form-control is-valid "id="doctorExperience01" name="mName1" placeholder="Submit Patient Id"/>
+		</div>
+		<div class="col-md-4 mb-3">
+			<button type="button" class="btn btn-secondary btn-lg">Large button</button>
+		</div>
+	</div>
+</form>
+
+-->
+
+<div>
+	<br /><br />
+	<h1 align="center">Patient Detailed Bill</h1>
+</div>
+
+<br /> <br />
+
+<div align="center">
+	<div class="row">
+		<div class="col-md-4 offset-2">
+			<h4>Total Days: {{daysCnt}}</h4>
+		</div>
+		<div class="col-md-4 offset-2">
+			<h4>Cost: {{cost1}}</h4>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4 offset-2">
+			<h4>No of Prescription: {{presCnt}}</h4>
+		</div>
+		<div class="col-md-4 offset-2">
+			<h4>Cost: {{cost2}}</h4>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4 offset-2">
+			<h4>No of Test: {{testCnt}}</h4>
+		</div>
+		<div class="col-md-4 offset-2">
+			<h4>Test Bill: {{testBill}}</h4>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4 offset-2">
+			<h4>Total Medicine Bill: {{med_bill}}</h4>
+		</div>
+	</div>
+
+</div>

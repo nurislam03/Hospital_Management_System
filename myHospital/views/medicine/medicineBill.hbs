@@ -1,0 +1,32 @@
+
+ <br />
+ <h4 align="center">Detail Medicine Bill</h4> <br />
+
+{{# if result}}
+	<div>
+		<table class="table table-bordered table-striped">
+			  <thead>
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">Name</th>
+			      <th scope="col">Quantity</th>
+			      <th scope="col">Unit Price</th>
+				  <th scope="col">Total Price</th>
+			    </tr>
+			  </thead>
+
+		    {{# each result}}
+				  <tbody>
+				  <tr>
+					<th scope="row">1</th>
+					<td>{{this.NAME}}</td>
+					<td>{{this.Total_Quantity}}</td>
+					<td>{{this.PRICE}}</td>
+					<td>{{this.Total_Price}}</td>
+				  </tr>
+				</tbody>
+		   {{/each}}
+
+		</table>
+	</div>
+{{/if}}

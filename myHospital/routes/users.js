@@ -74,8 +74,61 @@ router.postPatientAdmissionForm = function(req, res, next) {
         req.flash('message', 'New Patient is added successfully!');
         res.redirect('/patient-profile');
     });
-}
+};
 
+/*
+// request for patient detailed bill by patient id  /
+router.showPatientDetailedBillForm = function(req, res, next) {
+    res.render('patients/patientDetailedBill');
+}*/
+
+/* show patient detailed bill */
+router.showPatientDetailedBillForm = function(req, res, next) {
+    var p_id = req.body.pID;
+
+    db.query('SELECT DATEDIFF(now(), admission_date) AS tot_days from Patient Where patient_id = ?',[p_id], function (err, result, fields) {
+        if (err) console.log('err in 1');
+
+        else {
+            console.log(JSON.stringify(result));
+            var number_of_days = 0;
+            number_of_days += result.tot_days;
+            /*
+            db.query('SELECT * From Bed Where ',[], function (err, result, fields) {
+                if (err) throw err;
+                //console.log(result[0]);
+                res.render('patients/patientProfile', {pageTitile: 'Patient Profile', profileValue: result[0], message: req.flash('message')});
+            });
+            */
+
+            var bed_rent = 450;
+            var total_cost1  = number_of_days * bed_rent;
+
+            db.query('SELECT Count(Distinct prescription_id) as pesCnt, SUM(med_cost) As med_bill From med_prescription where patient_id = ?',[p_id], function (err, result1, fields) {
+                if (err) console.log('err in 2');
+
+                else {
+                    console.log(JSON.stringify(result[0]));
+                    var num_of_prescription = result1.pesCnt;
+                    var tot2 = num_of_prescription * 3000;
+                    var medicine_bill = result.med_bill;
+
+                    db.query('SELECT Count(test_id) As testCnt from Test Where patient_id = ?',[p_id], function (err, result2, fields) {
+                        if (err) console.log('err in 3');
+                        //console.log(result[0]);
+                        else {
+                            var test_cnt = result2[0].testCnt;
+                            var test_bill = test_cnt * 2500;
+
+                            res.render('patients/patientDetailedBill', {pageTitile: 'Patient bill', daysCnt: number_of_days, cost1: total_cost1, presCnt: num_of_prescription, cost2: tot2, med_bill: medicine_bill, testCnt: test_cnt, testBill:test_bill, message: req.flash('message')});
+                        };
+
+                    });
+                }
+            });
+        }
+    });
+};
 
 /* GET patient-profile page. */
 router.showPatientProfile = function(req, res, next) {
@@ -277,10 +330,26 @@ router.postDoctorAdmissionForm = function(req, res, next) {
     });
 };
 
+
+
+/* Doctor Detailed Bill */
+router.showDoctorDetailedBill = function(req, res, next) {
+
+    db.query('Select doctor_id AS doctorID, Count(test_id) as testCnt, Count(Distinct prescription_id) as PrescriptionCnt, Count(test_id)*(300) as test_percentage, Count(Distinct prescription_id)*(500) as Prescription_percentage, Count(test_id)*(300)+ Count(Distinct prescription_id)*(500) AS Total From Test Group By doctor_id Order By doctor_id ASC',[], function (err, result, fields) {
+        if (err) throw err;
+        //console.log(JSON.stringify(result[0]));
+        res.render('doctors/doctorDetaildBill', {pageTitile: 'Doctor Detailed Bill', result: result, message: req.flash('Doctor Detailed Bill!')});
+    });
+}
+
+
 /* GET doctor-profile page. */
 router.showDoctorProfile = function(req, res, next) {
     res.render('doctors/doctorProfile');
 };
+
+
+
 
 
 /* GET Medical Advise Form */
@@ -692,6 +761,18 @@ router.postMedicineEntryForm = function(req, res, next) {
     db.query("INSERT INTO `Medicine`(`supplier_id`, `supplier_name`, `date_of_supply`, `name`, `type`, `unit_price`, `quantity`, `manufacture_date`, `expiry_date`) VALUES(?,?,?,?,?,?,?,?,?)", [supplier_id, supplier_name, date_of_supply, name4, type4, unit_price4, quantity4, manufacture_date4, expiry_date4], function(err) {
         if(err) console.log('there is an error in postMedicineEntryForm 4');
         res.redirect('/');
+    });
+};
+
+
+/* medicine bill */
+router.showMedicineBill = function(req, res, next) {
+    console.log('i am here at showMedicineBill page');
+
+    db.query('SELECT name AS NAME, SUM(quantity) AS Total_Quantity, unit_price AS PRICE, SUM(quantity)*unit_price As Total_Price From Medicine Group By name ORDER by name ASC',[], function (err, result, fields) {
+        if (err) throw err;
+        //console.log(result[0]);
+        res.render('medicine/medicineBill', {pageTitile: 'Medicine Bill', result: result, message: req.flash('message')});
     });
 }
 

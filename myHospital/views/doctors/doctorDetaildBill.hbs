@@ -1,0 +1,42 @@
+
+
+ <br />
+ <h4 align="center">Doctor Detailed Bill</h4> <br />
+
+
+ {{# if result}}
+ 	<div>
+ 		<table class="table table-bordered table-striped">
+ 			  <thead>
+ 			    <tr>
+ 			      <th scope="col">#</th>
+ 			      <th scope="col">Doctor Id</th>
+ 			      <th scope="col">No of Test Given</th>
+ 			      <th scope="col">No of Prescription</th>
+ 				  <th scope="col">% of Total Test</th>
+				  <th scope="col">% of Total Prescription</th>
+				  <th scope="col">Total</th>
+ 			    </tr>
+ 			  </thead>
+
+ 		    {{# each result}}
+ 				  <tbody>
+ 				  <tr>
+ 					<th scope="row">1</th>
+ 					<td>{{this.doctorID}}</td>
+ 					<td>{{this.testCnt}}</td>
+ 					<td>{{this.PrescriptionCnt}}</td>
+ 					<td>{{this.test_percentage}}</td>
+					<td>{{this.Prescription_percentage}}</td>
+					<td>{{this.Total}}</td>
+ 				  </tr>
+ 				</tbody>
+ 		   {{/each}}
+ 		</table>
+ 	</div>
+ {{/if}}
+
+<div>
+	<p>*Per Test Advise  Doctor gets 300 Tk</p>
+	<p>*Per Prescription Doctor gets 500 Tk</p>
+</div>

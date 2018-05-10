@@ -19,6 +19,8 @@ module.exports = function(newApp) {
     newApp.get('/patient-investigation', dataController.showPatientInvestigationForm);
     newApp.post('/patient-investigation', dataController.postPatientInvestigationForm);
 
+    /* patient Detailed bill*/
+    newApp.post('/patient-bill', dataController.showPatientDetailedBillForm);
 
     /* patient-profile page. */
     newApp.get('/patient-profile', dataController.showPatientProfile);
@@ -27,6 +29,8 @@ module.exports = function(newApp) {
     /* Doctor */
     newApp.get('/add-doctor', dataController.showDoctorAdmissionForm);
     newApp.post('/add-doctor', dataController.postDoctorAdmissionForm);
+
+    newApp.get('/doctor-bill', dataController.showDoctorDetailedBill);
 
 
     /* doctor-profile page. */
@@ -54,4 +58,7 @@ module.exports = function(newApp) {
     /* GET Medicine Entry Form. */
     newApp.get('/add-medicine', dataController.showMedicineEntryForm);
     newApp.post('/add-medicine', dataController.postMedicineEntryForm);
+
+    /* Medicine Bill*/
+    newApp.get('/medicine-bill', dataController.showMedicineBill);
 }

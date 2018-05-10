@@ -25,9 +25,19 @@
                           Features2
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <a class="dropdown-item" href="/add-medicine">Medicine Entry</a>
                           <a class="dropdown-item" href="/add-ward">Add Ward</a>
                           <a class="dropdown-item" href="/add-cabin">Add Cabin</a>
+                      </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Features3
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="/add-medicine">Medicine Entry</a>
+                          <a class="dropdown-item" href="/medicine-bill">Medicine Bill</a>
+                          <a class="dropdown-item" href="/doctor-bill">Doctor Detailed Bill</a>
                       </div>
                     </li>
 
@@ -48,6 +58,10 @@
                 </ul>
             </div>
 
+            <form action="/patient-bill" method="post" class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" name="pId" type="submit">Patient Bill</button>
+          </form>
 
         </nav>
     </div>
